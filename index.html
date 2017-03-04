@@ -15,7 +15,7 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
                 font-size: 32px;
-                margin-bottom: 0px;
+                margin-bottom: 0;
             }
             h2{
                 color: #364A36;
@@ -29,7 +29,8 @@
                 padding-bottom: 8px;
                 font-size: 28px;
             }
-            ol {
+            ol,
+            ul {
                 padding-right: 7%;
                 padding-left: 13%;
             }
@@ -60,7 +61,7 @@
                 font-size: 17px;
             }
             .formula{
-                font-family: "Cambria", Georgia, serif;
+                font-family: "Times New Roman", Times, serif;
                 text-align: center;
             }
             .task{
@@ -71,16 +72,48 @@
                 padding-bottom: 10px;
             }
             .footer{
+                display: flex;
                 padding-top: 20px;
                 padding-bottom: 20px;
                 background-color: #3F5A3F;
             }
+            .also {
+                align-self: flex-start;
+                color: #8BA28B;
+                font-weight: bold;
+                margin-left: 60px;
+                padding-top: 5px;
+                padding-bottom: 20px;
+            }
             .auth{
+                align-self: flex-end;
                 margin-left: 7%;
-                margin-right: 7%;
+                margin-right: 5%;
                 color: #FFFFFF;
                 text-align: right;
                 font-size: 12px;
+            }
+            .href {
+                flex-basis: 400px;
+                justify-content: flex-start;
+                margin-right: auto;
+                margin-left: 20px;
+            }
+            .href a {
+                color: #CCD6CC;
+                text-decoration: none;
+            }
+            .href a:hover {
+                 color: white;
+             }
+            .hrefs {
+                margin-bottom: 5px;
+                padding: 5px;
+            }
+            .hrefs:hover {
+                background-color: #597859;
+                text-decoration: none;
+                border-radius: 4px;
             }
             .hr1{
                 border: 3px double #D7E5D7;
@@ -93,7 +126,7 @@
                 margin-left: 7%;
             }
             .head{
-                margin-top: 0px;
+                margin-top: 0;
                 background-color: #EBEFEB;
                 text-align: center;
                 font-size: 20px;
@@ -110,14 +143,41 @@
             }
             .button:hover{
                 background-color: #F6AC60;
-                transition: 0.8s;
+                transition: 0.2s;
+            }
+            .image {
+                text-align: center;
+            }
+            table {
+                margin: auto;
+                border-collapse: collapse;
+            }
+            th,
+            td {
+                padding: 10px;
+                text-align: center;
+                border: 1px solid #A0CAAB;
+            }
+            th {
+                background-color: #EBEFEB;
+                color: #708970;
+            }
+            caption {
+                caption-side: bottom;
+                padding-top: 10px;
+                color: #757575;
+            }
+            .video {
+                margin: auto;
             }
         </style>
     </head>
 
-    <body style="background-image: url(background.png); background-color: #000000">
+    <body style="background: url(img/background.png) #000000">
 
-        <div style="background-color: #FFFFFF; color: #000000; font-size: 18px; width: 1100px; margin: auto">
+        <div style="background-color: #FFFFFF; color: #000000; font-family: 'Times New Roman', Times, Georgia, serif;
+                    font-size: 18px; width: 1100px; margin: auto">
+
             <div style="text-align: center; padding-top: 15px; font-weight: bold; font-size: 24px;">
                 Шестаков А.П.
             </div>
@@ -134,7 +194,7 @@
             </div>
 
             <div>
-                <h2 name="intro" id="intro">
+                <h2 id="intro">
                     Введение
                 </h2>
 
@@ -144,6 +204,13 @@
                     не&nbsp;так уж и&nbsp;часто. Тем не&nbsp;менее, упражнения, рассматриваемые в&nbsp;этой публикации,
                     могут послужить хорошей тренировкой в&nbsp;области программирования и&nbsp;занять достойное место
                     в&nbsp;классах с&nbsp;углубленным изучением информатики или на&nbsp;кружках по&nbsp;программированию.
+                </p>
+
+                <div class="image">
+                    <img src="img/TurboPascal.png" width="150px" alt="Turbo Pascal">
+                </div>
+
+                <p>
                     Алгоритмы, представленные ниже, записаны на&nbsp;Turbo Pascal, версия&nbsp;7.0. При&nbsp;желании
                     или необходимости они могут легко быть адаптированы к&nbsp;любой другой программной&nbsp;среде.
                 </p>
@@ -167,16 +234,94 @@
                     и&nbsp;вывода результатов&nbsp;и&nbsp;т.д.
                 </p>
 
+                <table>
+                    <tr>
+                        <th rowspan="2">
+                            Имя диапазона
+                        </th>
+                        <th colspan="3">
+                            Характеристики
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Левая граница
+                        </th>
+
+                        <th>
+                            Правая граница
+                        </th>
+
+                        <th>
+                            Максимальная длина
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Integer
+                        </td>
+
+                        <td>
+                            -32768
+                        </td>
+
+                        <td>
+                            32767
+                        </td>
+
+                        <td>
+                            5
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Word
+                        </td>
+
+                        <td>
+                            0
+                        </td>
+
+                        <td>
+                            65535
+                        </td>
+
+                        <td>
+                            5
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            LongInt
+                        </td>
+
+                        <td>
+                            -2 147 483 648
+                        </td>
+
+                        <td>
+                            2 147 483 647
+                        </td>
+
+                        <td>
+                            10
+                        </td>
+                    </tr>
+
+                    <caption>
+                        Диапазоны целых числовых типов в Pascal
+                    </caption>
+                </table>
+
                 <p>
                     Покажем реализацию решения такого рода задач на&nbsp;примере умножения одного многозначного числа
                     на&nbsp;другое. Именно эта арифметическая операция наиболее часто используется при&nbsp;решении
                     других задач.
                 </p>
-            </div>
 
-
-            <div>
-                <h2 name="mult" id="mult">
+                <h2 id="mult">
                     Умножение "длинных" чисел
                 </h2>
 
@@ -202,7 +347,7 @@ Type Digit = 0..9;
 
                 </p>
 
-                <ol>
+                <ul type="circle">
                     <li>
                         ввод "длинного" числа;
                     </li>
@@ -215,7 +360,7 @@ Type Digit = 0..9;
                     <li>
                         определение количества цифр в&nbsp;записи числа.
                     </li>
-                </ol>
+                </ul>
 
                 <p>
                     Каждую из&nbsp;подзадач реализуем в&nbsp;виде отдельной подпрограммы. Начнем с&nbsp;ввода.
@@ -446,10 +591,23 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                     из&nbsp;олимпиад школьников по программированию, проводившихся в&nbsp;Пермской области
                     в&nbsp;1989-99&nbsp;гг.
                 </p>
+
+                <p>
+                    Для того, чтобы вы могли лучше понять способы взаимодействия с "длинными" числами в Pascal,
+                    приложим ко всему вышг сказанном следующее видео:
+                </p>
+
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/n-sT7BENNxA" allowfullscreen>
+                        YouTube. Лекция 9: Длинная арифметика
+                    </iframe>
+                </div>
+
             </div>
 
+
             <div>
-                <h2 class="stripe" name="tasks" id="tasks">
+                <h2 class="stripe" id="tasks">
                     Задачи для самостоятельного решения
                 </h2>
 
@@ -539,7 +697,7 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                     <li>
                         Составить программу вычисления точного значения суммы дробей
                         <div class="formula" style="margin-top: 5px;">
-                            <img src="Image11.png" height=43>
+                            <img src="img/image11.png" height=43>
                         </div>
                         при <span class="formula"><i>n</i> &gt; 10</span>. Ответ должен быть представлен в&nbsp;виде
                         несократимой дроби <span class="formula"><i>P</i>/<i>Q</i></span>,
@@ -632,7 +790,7 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                     <li>
                         Дана последовательность
                         <div class="formula">
-                            <img src="Image15.png" height=58>
+                            <img src="img/image15.png" height=58>
                         </div>
                         Написать программу, находящую точное значение <span class="formula"><i>a<sub>n</sub></i></span>
                         при <span class="formula">1&nbsp;&#10877&nbsp;<i>n</i>&nbsp;&#10877&nbsp;150</span>.
@@ -674,7 +832,7 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                 </pre>
             </div>
 
-            <h2 class="stripe" name="lit" id="lit">
+            <h2 class="stripe" id="lit">
                 Список использованной литературы
             </h2>
 
@@ -706,7 +864,33 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                 </li>
             </ol>
 
+
             <div class="footer">
+                <div class="also">
+                    Читайте также:
+                </div>
+                <div class="href">
+
+                        <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%BB%D0%B8%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0"
+                           title="Википедия">
+                            <div class="hrefs">
+                                Wikipedia: Длинная арифметика
+                            </div>
+                        </a>
+
+                        <a href="http://www.programmersforum.ru/showthread.php?t=251850" title="Форум программистов">
+                            <div class="hrefs">
+                                Форум программистов: Длинные числа
+                            </div>
+                        </a>
+
+                        <a href="http://comp-science.narod.ru/DL-AR/okulov.htm" title="Статья С.М. Окулова">
+                            <div class="hrefs">
+                                С.М. Окулов. "Длинная" арифметика
+                            </div>
+                        </a>
+
+                </div>
                 <div class="auth">
                     Шестаков А.П., 1996-1999
                 </div>
