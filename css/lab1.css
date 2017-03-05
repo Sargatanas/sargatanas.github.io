@@ -173,14 +173,14 @@ caption {
 #lit a::before{
     content: '';
     display: block;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: 50%;
     bottom: 0;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     transform:
-            translateX(-300px)
+            translateX(620px)
             translateY(-10px);
     background: #A0CAAB;
     opacity: 0.5;
@@ -190,13 +190,13 @@ caption {
 #lit a::after{
     content: '';
     display: block;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: 50%;
     bottom: 0;
     width: 36px;
     height: 36px;
     transform:
-            translateX(-307px)
+            translateX(613px)
             translateY(-12px);
     background: url('img/arrow-top.svg') no-repeat;
     opacity: 0.3;
