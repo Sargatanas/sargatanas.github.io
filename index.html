@@ -10,12 +10,12 @@
         <link href="css/lab1.css" rel="stylesheet">
     </head>
 
-    <body style="background: url(img/background.png) #000000">
+    <body class="filter">
 
-        <div style="background-color: #FFFFFF; color: #000000; font-family: 'Times New Roman', Times, Georgia, serif;
+        <div style="background-color: #FFFFFF; color: #000000; font-family: 'Times New Roman', Georgia, serif;
                     font-size: 18px; width: 1100px; margin: auto">
 
-            <div style="text-align: center; padding-top: 15px; font-weight: bold; font-size: 24px;">
+            <div id="head" style="text-align: center; padding-top: 15px; font-weight: bold; font-size: 24px;">
                 Шестаков А.П.
             </div>
 
@@ -24,10 +24,10 @@
             </h1>
 
             <div class="head">
-                <a class="button" href="#intro">ВВЕДЕНИЕ</a>
-                <a class="button" href="#mult">УМНОЖЕНИЕ ДЧ</a>
-                <a class="button" href="#tasks">ЗАДАНИЯ</a>
-                <a class="button" href="#lit">ЛИТЕРАТУРА</a>
+                <a class="button" href="#intro">введение</a>
+                <a class="button" href="#mult">умножение дч</a>
+                <a class="button" href="#tasks">задания</a>
+                <a class="button" href="#lit">литература</a>
             </div>
 
             <div>
@@ -44,7 +44,7 @@
                 </p>
 
                 <div class="image">
-                    <img src="img/TurboPascal.png" width=150 alt="Turbo Pascal">
+                    <img src="css/img/TurboPascal.png" width=150 alt="Turbo Pascal">
                 </div>
 
                 <p>
@@ -158,8 +158,9 @@
                     других задач.
                 </p>
 
-                <h2 id="mult">
+                <h2 class="top" id="mult">
                     Умножение "длинных" чисел
+                    <a href="#head" title="Вверх"></a>
                 </h2>
 
                 <p>Наиболее естественным способом представления многозначного числа является запись каждого
@@ -434,7 +435,7 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                     приложим ко всему вышг сказанном следующее видео:
                 </p>
 
-                <div class="video">
+                <div class="video anti-filter">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/n-sT7BENNxA" allowfullscreen>
                         YouTube. Лекция 9: Длинная арифметика
                     </iframe>
@@ -444,8 +445,9 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
 
 
             <div>
-                <h2 class="stripe" id="tasks">
+                <h2 class="stripe top" id="tasks">
                     Задачи для самостоятельного решения
+                    <a href="#head" title="Вверх"></a>
                 </h2>
 
                 <ol class="task">
@@ -534,7 +536,7 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                     <li>
                         Составить программу вычисления точного значения суммы дробей
                         <div class="formula" style="margin-top: 5px;">
-                            <img src="img/image11.png" height=43>
+                            <img src="css/img/image11.png" height=43>
                         </div>
                         при <span class="formula"><i>n</i> &gt; 10</span>. Ответ должен быть представлен в&nbsp;виде
                         несократимой дроби <span class="formula"><i>P</i>/<i>Q</i></span>,
@@ -627,7 +629,7 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                     <li>
                         Дана последовательность
                         <div class="formula">
-                            <img src="img/image15.png" height=58>
+                            <img src="css/img/image15.png" height=58>
                         </div>
                         Написать программу, находящую точное значение <span class="formula"><i>a<sub>n</sub></i></span>
                         при <span class="formula">1&nbsp;&#10877&nbsp;<i>n</i>&nbsp;&#10877&nbsp;150</span>.
@@ -669,8 +671,9 @@ Var I, J : Integer; P : Digit; VspRez : 0..99;
                 </pre>
             </div>
 
-            <h2 class="stripe" id="lit">
+            <h2 class="stripe top" id="lit">
                 Список использованной литературы
+                <a href="#head" title="Вверх"></a>
             </h2>
 
             <ol class="lit">

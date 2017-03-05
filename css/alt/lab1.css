@@ -1,5 +1,11 @@
 body {
-    background: url(img/background.png) #000000;
+    background: url(img/background.jpg) #000000 fixed;
+}
+.filter {
+    filter: hue-rotate(110deg);
+}
+.anti-filter {
+    filter: hue-rotate(-110deg);
 }
 h1 {
     background-color: #6CB27F;
@@ -136,7 +142,7 @@ p{
     text-transform: uppercase;
 }
 .button:hover{
-    background-color: #F6AC60;
+    background-color: #6275f6;
     transition: 0.2s;
 }
 .image {
@@ -173,15 +179,13 @@ caption {
 #lit a::before{
     content: '';
     display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    float: right;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     transform:
-            translateX(-300px)
-            translateY(-10px);
+            translateX(65px)
+            translateY(-8px);
     background: #A0CAAB;
     opacity: 0.5;
 }
@@ -190,14 +194,12 @@ caption {
 #lit a::after{
     content: '';
     display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    float: right;
     width: 36px;
     height: 36px;
     transform:
-            translateX(-307px)
-            translateY(-12px);
+            translateX(108px)
+            translateY(3px);
     background: url('img/arrow-top.svg') no-repeat;
     opacity: 0.3;
 }
@@ -212,7 +214,7 @@ caption {
 #mult a:hover::before,
 #tasks a:hover::before,
 #lit a:hover::before {
-    background: #F6AC60;
+    background: #6275f6;
     opacity: 1;
     cursor: pointer;
 }
