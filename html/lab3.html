@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №3</title>
+    <script src="../js/script1.js"></script>
+</head>
+<body>
+    <div class="block ex-1">
+        <h2>
+            Задание №1
+        </h2>
+
+        <p>
+            Сгенерировать последовательность с помощью датчика случайных чисел и обработать согласно варианту задания.
+            <br>
+            Массивы при выполнении этого задания не используются!
+        </p>
+
+        <p>
+            14.	Определить, сколько раз встречается минимальный элемент в последовательности.
+        </p>
+
+        <div class="count">
+            <form>
+                <label for="n1">
+                    Введите количество элементов в последовательности:
+                </label>
+                <input type="text" id="n1">
+                <input type="button" onclick="Ex1()" value="Сгенерировать">
+            </form>
+
+            <p>
+                Сгенерированная последовательность: <span id="output1"></span>
+            </p>
+
+            <p>
+                Минимальный элемент: <span id="min1"></span>
+            </p>
+
+            <p>
+                Встречается <span id="count1"></span> раз(а)
+            </p>
+        </div>
+    </div>
+
+    <div class="block ex-2">
+        <h2>
+            Задание №2
+        </h2>
+
+        <p>
+            14.	Дано натуральное число <i>n</i>. Найти и вывести все числа в интервале от 1 до <i>n</i> − 1,
+            у которых сумма всех цифр совпадает с суммой цифр данного числа.
+            Если таких чисел нет, то вывести слово "нет".
+            <br>
+            Пример. <i>n</i> = 44.
+            <br>
+            Числа: 17, 26, 35.
+        </p>
+
+        <div class="count">
+            <form>
+                <label for="n2">Введите N:</label>
+                <input type="text" id="n2">
+                <input type="button" onclick="Ex2()" value="Вывести">
+            </form>
+
+            <p>
+                Числа, сумма цифр которых совпадает с <span id="count2"></span>: <span id="output2"></span>
+            </p>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

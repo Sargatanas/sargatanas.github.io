@@ -1,0 +1,65 @@
+body, html {
+    height: 100%;
+    background: url("img/background.png") #000000;
+}
+
+.area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.area-small {
+    width: 1000px;
+    height: 600px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.href {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    padding: 10px 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    background-color: #6CB27F;
+    font-size: 32px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.area-small p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.href a {
+    width: 60%;
+    margin: 8px auto;
+    padding: 10px;
+    background: #A0CAAB;
+    box-shadow: 0 4px 0 3px rgba(0,0,0,0.15);
+    font-family: Fixed, monospace;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.3s;
+}
+
+.href a:first-child {
+    margin-top: 0;
+}
+
+.href a:last-child {
+    margin-bottom: 0;
+}
+
+.href a:hover {
+    background: #feac2d;
+}
+

@@ -1,0 +1,740 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+        <title>Задачи на длинную арифметику</title>
+        <meta charset="utf-8">
+        <meta name="keywords" content="длинная арифметика, задачи на Pascal">
+        <meta name="description" content="Решенеие задач длинной арифметики на языке Pascal">
+        <link href="../css/lab1.css" rel="stylesheet">
+    </head>
+
+    <body class="filter">
+
+        <div style="background-color: #FFFFFF; color: #000000; font-family: 'Times New Roman', Georgia, serif;
+                    font-size: 18px; width: 1100px; margin: auto">
+
+            <div id="head" style="text-align: center; padding-top: 15px; font-weight: bold; font-size: 24px;">
+                Шестаков А.П.
+            </div>
+
+            <h1>
+                ЗАДАЧИ НА ДЛИННУЮ АРИФМЕТИКУ
+            </h1>
+
+            <div class="head">
+                <a class="button" href="#intro">введение</a>
+                <a class="button" href="#mult">умножение дч</a>
+                <a class="button" href="#tasks">задания</a>
+                <a class="button" href="#lit">литература</a>
+            </div>
+
+            <div>
+                <h2 id="intro">
+                    Введение
+                </h2>
+
+                <p>
+                    Рассмотрим достаточно популярную в&nbsp;программировании задачу на&nbsp;работу с&nbsp;"длинными"
+                    числами. Реально с&nbsp;"астрономическими" или "микроскопическими" числами приходится сталкиваться
+                    не&nbsp;так уж и&nbsp;часто. Тем не&nbsp;менее, упражнения, рассматриваемые в&nbsp;этой публикации,
+                    могут послужить хорошей тренировкой в&nbsp;области программирования и&nbsp;занять достойное место
+                    в&nbsp;классах с&nbsp;углубленным изучением информатики или на&nbsp;кружках по&nbsp;программированию.
+                </p>
+
+                <div class="image">
+                    <img src="../css/img/TurboPascal.png" width=150 alt="Turbo Pascal">
+                </div>
+
+                <p>
+                    Алгоритмы, представленные ниже, записаны на&nbsp;Turbo Pascal, версия&nbsp;7.0. При&nbsp;желании
+                    или необходимости они могут легко быть адаптированы к&nbsp;любой другой программной&nbsp;среде.
+                </p>
+
+                <hr class="hr2">
+
+                <p>
+                    Диапазон представления целых чисел (<b>Integer, Word, LongInt</b>) ограничен, о&nbsp;чем не&nbsp;раз
+                    уже говорилось впрочем, для&nbsp;действительных величин это замечание тоже актуально). Поэтому
+                    при&nbsp;решении задач всегда приходится действовать с&nbsp;оглядкой, — как&nbsp;бы не&nbsp;допустить
+                    возникновения ошибки выхода за диапазон или переполнения. Например, вычисляя факториал
+                    (<span class="formula"><i>n</i>!&nbsp;=&nbsp;1&nbsp;&middot;&nbsp;2&nbsp;&middot;&nbsp;3&nbsp;
+                    &middot;&nbsp;…&nbsp;&middot;&nbsp;<i>n</i></span>), в&nbsp;диапазоне представления величин типа
+                    <span class="cod">Integer</span> удастся правильно получить только&nbsp;7!&nbsp;=&nbsp;5040,
+                    а&nbspв&nbspдиапазоне представления типа
+                    <span class="cod">LongInt</span> — 12!&nbsp;=&nbsp;479001600.
+                    Для&nbsp;больших значений, конечно, можно использовать действительные типы данных, но это уже
+                    не&nbsp;гарантирует точного результата. Поэтому полезно для&nbsp;получения точных значений
+                    при&nbsp;действиях с многозначными числами разработать другие способы представления таких чисел,
+                    алгоритмы выполнения арифметических и других операций, процедуры ввода
+                    и&nbsp;вывода результатов&nbsp;и&nbsp;т.д.
+                </p>
+
+                <table>
+                    <tr>
+                        <th rowspan="2">
+                            Имя диапазона
+                        </th>
+                        <th colspan="3">
+                            Характеристики
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Левая граница
+                        </th>
+
+                        <th>
+                            Правая граница
+                        </th>
+
+                        <th>
+                            Максимальная длина
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Integer
+                        </td>
+
+                        <td>
+                            -32768
+                        </td>
+
+                        <td>
+                            32767
+                        </td>
+
+                        <td>
+                            5
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Word
+                        </td>
+
+                        <td>
+                            0
+                        </td>
+
+                        <td>
+                            65535
+                        </td>
+
+                        <td>
+                            5
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            LongInt
+                        </td>
+
+                        <td>
+                            -2 147 483 648
+                        </td>
+
+                        <td>
+                            2 147 483 647
+                        </td>
+
+                        <td>
+                            10
+                        </td>
+                    </tr>
+
+                    <caption>
+                        Диапазоны целых числовых типов в Pascal
+                    </caption>
+                </table>
+
+                <p>
+                    Покажем реализацию решения такого рода задач на&nbsp;примере умножения одного многозначного числа
+                    на&nbsp;другое. Именно эта арифметическая операция наиболее часто используется при&nbsp;решении
+                    других задач.
+                </p>
+
+                <h2 id="mult">
+                    Умножение "длинных" чисел
+                    <a href="#head" title="Вверх"></a>
+                </h2>
+
+                <p>Наиболее естественным способом представления многозначного числа является запись каждого
+                    его&nbsp;разряда в&nbsp;виде отдельного элемента линейного массива (или&nbsp;списка, где&nbsp;память
+                    под&nbsp;цифру будет отводиться по&nbsp;мере надобности, в&&nbsp;то&nbsp;время
+                    как&nbsp;в&nbsp;массиве приходится заранее задавать максимальное количество элементов в&nbsp;нем).
+                    Пусть (для&nbsp;удобства дальнейших действий) разряды "длинного" числа при&nbsp;записи в&nbsp;массив
+                    нумеруются с&nbsp;единицы, начиная с&nbsp;разряда единиц, т.е.&nbsp;цифра из&nbsp;разряда единиц —
+                    элемент массива с&nbsp;номером один, цифра из&nbsp;разряда десятков — элемент массива
+                    с&nbsp;номером&nbsp;два&nbsp;и&nbsp;т.д. Определим для&nbsp;работы с&nbsp;"длинными"
+                    неотрицательными числами тип данных:
+                </p>
+
+                <pre>
+Const MNax = 2000;
+Type Digit = 0..9;
+     DlChislo = Array[1..Nmax] Of Digit;
+                </pre>
+
+                <p style="text-align: justify">
+                    Для&nbsp;решения поставленной задачи необходимо уметь выполнять следующие действия:
+
+                </p>
+
+                <ul type="circle">
+                    <li>
+                        ввод "длинного" числа;
+                    </li>
+                    <li>
+                        собственно умножение двух "длинных" чисел;
+                    </li>
+                    <li>
+                        вывод "длинного" числа;
+                    </li>
+                    <li>
+                        определение количества цифр в&nbsp;записи числа.
+                    </li>
+                </ul>
+
+                <p>
+                    Каждую из&nbsp;подзадач реализуем в&nbsp;виде отдельной подпрограммы. Начнем с&nbsp;ввода.
+                    Ввести большое число целесообразно в&nbsp;виде строки, а&nbsp;в&nbsp;дальнейшем преобразовать
+                    в&nbsp;массив цифр. В процедуре учтен указанный выше способ размещения "длинного" числа
+                    в&nbsp;массиве, т.е.&nbsp;с&nbsp;точки зрения пользователя число записывается как бы
+                    в&nbsp;обратном порядке.
+                </p>
+
+                <pre>
+{Процедура преобразования длинного числа, записанного
+в виде строки, в массив цифр; переменная OK принимает значение True,
+если в записи числа нет посторонних символов, отличных от десятичных
+цифр, иначе — false}
+
+Procedure Translate(S : String; Var A : DlChislo; Var OK : Boolean);
+Var I : Word;
+ Begin
+     Zero(A); I := Length(S); OK := True;
+     While (I >= 1) And OK Do
+      Begin
+          If S[I] In ['0'..'9']
+          Then A[Length(S)- I + 1]:= Ord(S[I]) - 48
+          Else OK := False; I := I - 1
+      End
+ End;
+        </pre>
+
+                <p>
+                    В процедуре вызывается подпрограмма <span class="cod">Zero(A)</span>, назначение которой
+                    — запись нуля в&nbsp;каждый разряд длинного числа. Вот&nbsp;текст этой&nbsp;процедуры:
+                </p>
+
+                <pre>
+{Процедура обнуления длинного числа}
+Procedure Zero(Var A : DlChislo);
+Var I : Integer;
+ Begin
+     For I := 1 To NMax Do A[I] := 0;
+ End;
+        </pre>
+
+                <p>Таким образом, длинное число записано в&nbsp;массив, где&nbsp;впереди (в&nbsp;качестве элементов
+                    с&nbsp;большими номерами) стоят незначащие нули. При выполнении действий и&nbsp;выводе
+                    ответа они не&nbsp;учитываются.
+                </p>
+
+                <p>
+                    Сейчас разработаем функцию определения количества значащих цифр в&nbsp;записи числа,
+                    поскольку она потребуется при&nbsp;реализации подпрограммы умножения.
+                </p>
+
+                <pre>
+{Функция определения количества цифр в записи длинного числа}
+Function Dlina(C : DlChislo) : Integer;
+Var I : Integer;
+ Begin
+   I := NMax;
+   While (I > 1) And (C[I] = 0) Do I := I - 1;
+   Dlina := I
+ End;
+        </pre>
+
+                <p>
+                    При&nbsp;ее&nbsp;разработке было использовано следующее соображение: если число не&nbsp;равно нулю,
+                    то&nbsp;количество цифр в&nbsp;его записи равно номеру первой цифры, отличной от&nbsp;нуля,
+                    если просмотр числа осуществляется от&nbsp;старшего разряда к&nbsp;младшему. Если&nbsp;же&nbsp;
+                    длинное число равно нулю, то&nbsp;получается, что&nbsp;количество цифр в&nbsp;его&nbsp;записи равно
+                    одной, что&nbsp;и&nbsp;требовалось.
+                </p>
+
+                <p>
+                    Ну и, наконец, главная процедура, ради которой и&nbsp;была проделана вся&nbsp;предшествующая работа.
+                    При&nbsp;составлении алгоритма используется идея умножения "столбиком", хотя в&nbsp;нашем варианте
+                    сложение выполняется не&nbsp;по&nbsp;окончанию умножения, а&nbsp;по&nbsp;ходу его, т.е.&nbsp;
+                    перемножив очередные цифры, сразу же добавляем результирующую цифру в&nbsp;нужный
+                    разряд и&nbsp;формируем перенос в&nbsp;следующий разряд.
+                </p>
+
+                <pre>
+{Процедура умножения длинных чисел.
+A, B — множители, C — произведение}
+Procedure Multiplication(A, B : DlChislo; Var C : DlChislo);
+Var I, J : Integer; P : Digit; VspRez : 0..99;
+ Begin
+     Zero(C);
+     For I := 1 To Dlina(A) Do {Цикл по количеству цифр
+                                в первом числе}
+      Begin
+          P := 0; {Первоначально перенос равен нулю}
+          For J := 1 To Dlina(B) Do {Цикл по количеству цифр
+                                     во втором числе}
+           Begin
+               VspRez := A[I] * B[J] + P + C[I + J - 1];
+               C[I + J - 1] := VspRez Mod 10; {Очередное значение цифры в
+                                               разряде I + J - 1}
+               P := VspRez Div 10 {Перенос в следующий разряд}
+           End;
+          C[I + J] := P {последний перенос может быть отличен от нуля,
+                         запишем его в пока ещё свободный разряд}
+      End;
+ End;
+                </pre>
+
+                <p>
+                    Сейчас приведем листинг программы целиком.
+                </p>
+
+                <pre>
+Program DlUmn;
+Const NMax = 2000;
+Type Digit = 0..9; DlChislo = Array[1..Nmax] Of Digit;
+Var S : String;
+    M, N, R, F : DlChislo;
+    I, MaxF : Word;
+    Logic : Boolean;
+{Процедура обнуления длинного числа}
+Procedure Zero(Var A : DlChislo);
+Var I : Integer;
+ Begin
+     For I := 1 To NMax Do A[I] := 0;
+ End;
+{Функция определения количества цифр в записи длинного числа}
+Function Dlina(C : DlChislo) : Integer;
+Var I : Integer;
+ Begin
+     I := NMax;
+     While (I > 1) And (C[I] = 0) Do I := I - 1;
+     Dlina := I
+ End;
+{Процедура печати длинного числа}
+Procedure Print(A : DlChislo);
+Var I : Integer;
+ Begin
+     For I := Dlina(A) DownTo 1 Do Write(A[I] : 1);
+     WriteLn
+ End;
+{Процедура преобразования длинного числа в массив цифр}
+Procedure Translate(S : String; Var A : DlChislo;
+                    Var OK : Boolean);
+Var I : Word;
+ Begin
+     Zero(A); I := Length(S); OK := True;
+     While (I >= 1) And OK Do
+      Begin
+          If S[I] In ['0'..'9']
+          Then A[Length(S) - I+ 1] := Ord(S[I]) - 48
+          Else OK := False;
+          I := I - 1
+      End
+ End;
+Procedure Multiplication(A, B : DlChislo; Var C : DlChislo);
+Var I, J : Integer; P : Digit; VspRez : 0..99;
+ Begin
+     Zero(C);
+     For I := 1 To Dlina(A) Do
+      Begin P := 0;
+          For J := 1 To Dlina(B) Do
+           Begin
+               VspRez := A[I] * B[J] + P + C[I + J - 1];
+               C[I + J - 1] := VspRez Mod 10;
+               P := VspRez Div 10
+           End;
+          C[I + J] := P
+      End
+ End;
+{Основная программа}
+ Begin
+     Repeat {повторяем ввод, пока число не будет введено правильно}
+         Write('Введите первый множитель: ');
+         ReadLn(S); Translate(S, M, Logic)
+     Until Logic;
+     Repeat
+         Write('Введите второй множитель: ');
+         ReadLn(S); Translate(S, N, Logic)
+     Until Logic;
+     Multiplication(M, N, R); Print(R)
+ End.
+        </pre>
+
+                <p>
+                    В приведенном листинге <span class="cod">Print</span> — процедура вывода длинного числа.
+                    Предоставим читателю самостоятельно разобраться в&nbsp;алгоритме ее&nbsp;работы.
+                </p>
+
+                <p>
+                    Вернемся к вычислению факториала. Используя разработанные подпрограммы, определим, значение
+                    факториала какого максимального числа можно разместить в&nbsp;памяти при&nbsp;таком представлении
+                    длинных чисел.
+                </p>
+
+                <p>
+                    Вот измененный фрагмент основной программы, решающий поставленную задачу.
+                </p>
+
+                <pre>
+ Begin
+     MaxF := 810;
+     Zero(F);
+     F[1] := 1;
+     For I := 1 To MaxF Do
+      Begin
+          Str(I, S); {преобразование числа I к строковому типу S}
+          Translate(S, M, Logic);
+          Multiplication(F, M, F);
+          Print(F);
+          WriteLn('Факториал числа ', I : 4, ' содержит ', Dlina(F), ' цифр.')
+      End
+ End.
+        </pre>
+
+                <p>
+                    Расчеты показали, что&nbsp;можно вычислять факториалы до значения 810! включительно,
+                    в&nbsp;записи которого 1999 цифр. Далее вновь возникает переполнение. Расчеты по&nbsp;программе
+                    продолжаются около&nbsp;5&nbsp;минут (IBM&nbsp;PC с&nbsp;процессором Pentium–100).
+                </p>
+
+                <hr class="hr1">
+
+                <p>
+                    Ниже будет предложен список задач для&nbsp;самостоятельного выполнения. Из&nbsp;них, по&nbsp;мнению
+                    автора, наибольшую сложность представляют реализации алгоритмов деления одного длинного числа
+                    на&nbsp;другое и извлечение квадратного корня. Алгоритм извлечения квадратного корня подробно
+                    описан в&nbsp;справочнике В.А.&nbsp;Гусева и А.Г.&nbsp;Мордковича&nbsp;[7]. В&nbsp;некоторых
+                    случаях составленные программы могут выступать как&nbsp;подпрограммы при&nbsp;разработке алгоритмов
+                    решения других, более сложных (как&nbsp;в&nbsp;примере с&nbsp;факториалом), задач.
+                    Кроме авторских задач и&nbsp;задач из&nbsp;списка литературы здесь приведены задания
+                    из&nbsp;олимпиад школьников по программированию, проводившихся в&nbsp;Пермской области
+                    в&nbsp;1989-99&nbsp;гг.
+                </p>
+
+                <p>
+                    Для того, чтобы вы могли лучше понять способы взаимодействия с "длинными" числами в Pascal,
+                    приложим ко всему вышг сказанном следующее видео:
+                </p>
+
+                <div class="video anti-filter">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/n-sT7BENNxA" allowfullscreen>
+                        YouTube. Лекция 9: Длинная арифметика
+                    </iframe>
+                </div>
+
+            <div>
+                <h2 class="stripe" id="tasks">
+                    Задачи для самостоятельного решения
+                    <a href="#head" title="Вверх"></a>
+                </h2>
+
+                <ol class="task">
+                    <li>
+                        Составить программу сравнения двух многозначных чисел (количество знаков в&nbsp;записи чисел
+                        более&nbsp;20).
+                    </li>
+                    <li>
+                        Составить программу, суммирующую два&nbsp;натуральных многозначных числа с&nbsp;количеством
+                        знаков более&nbsp;20.
+                    </li>
+                    <li>
+                        Составить программу вычисления степени <span class="formula"><i>a<sup>n</sup></i></span>,
+                        если <span class="formula"><i>a</i> &gt; <span class="cod">MaxInt</span></span>,
+                        <span class="formula"><i>n</i>&nbsp;&gt;&nbsp;10</span>.
+                    </li>
+                    <li>
+                        Составить программу вычисления числа <span class="formula">2<sup>64</sup> – 1</span>,
+                        в&nbsp;результате сохранить все&nbsp;цифры.
+                    </li>
+                    <li>
+                        Составить программу вычисления <span class="formula">100!</span> .
+                    </li>
+                    <li>
+                        Составить программу извлечения точного квадратного корня из&nbsp;<i>n</i>-разрядного числа
+                        (<span class="formula"><i>n</i>&nbsp;&gt;&nbsp;40</span>).
+                    </li>
+                    <li>
+                        Составить программу вычисления точного значения <i class="formula">n</i>!,
+                        где <span class="formula"> <i>n</i> &gt; 12</span>.
+                    </li>
+                    <li>
+                        Составить программу вычисления точного значения <span class="formula"><i>n<sup>n</sup></i></span>,
+                        где <span class="formula"><i>n</i> &gt; 10</span>.
+                    </li>
+                    <li>
+                        Составить программу деления числа <i class="formula">a</i> на число <i class="formula">b</i>,
+                        если <i class="formula">a</i>, <i class="formula">b</i> — многозначные числа.
+                    </li>
+                    <li>
+                        Вычислить <span class="formula">100! + 2<sup>100</sup></span>.
+                    </li>
+                    <li>
+                        Вычислить <span class="formula">100! – 2<sup>100</sup></span>.
+                    </li>
+                    <li>
+                        Вычислить <span class="formula">7<sup>123</sup></span>.
+                    </li>
+                    <li>
+                        Встречаются ли&nbsp;среди цифр числа <span class="formula">2<sup>11213</sup> – 1</span>
+                        две подряд идущие девятки?
+                    </li>
+                    <li>
+                        Вычислить <span class="formula">2<sup>–200</sup></span>.
+                    </li>
+                    <li>
+                        Составить программу нахождения частного и&nbsp;остатка от&nbsp;деления
+                        <i class="formula">m</i>-значного числа&nbsp;на&nbsp;<i class="formula">n</i>-значное
+                        (<i class="formula">m</i>, <span class="formula"><i>n</i> &gt; 20</span>).
+                    </li>
+                    <li>
+                        Выяснить, какое из чисел <i class="formula">a<sup>m</sup></i>,
+                        <i class="formula">b<sup>n</sup></i> больше и&nbsp;на&nbsp;сколько
+                        (<i class="formula">a</i>, <span class="formula"><i>b</i>&nbsp;&#10877&nbsp;40000</span>;
+                        <i class="formula">m</i>, <span class="formula"><i>n</i>&nbsp;&#10877&nbsp;10</span>).
+                    </li>
+                    <li>
+                        Найти <i class="formula">n</i> знаков в десятичной записи квадратного корня из целого числа
+                        <i class="formula">m</i> (<span class="formula"><i>n</i> &#10878 50</span>).
+                    </li>
+                    <li>
+                        Найти количество делителей <i class="formula">n</i>-значного натурального числа
+                        (<span class="formula"><i>n</i> &gt; 20</span>).
+                    </li>
+                    <li>
+                        Вычислить точное значение
+                        <span class="formula">
+                            (<i>n</i>!)! (<i>n</i>&nbsp;&#10878&nbsp;3)
+                        </span>.
+                    </li>
+                    <li>
+                        Составить программу вычисления точного значения суммы
+                        <span class="formula">1! + 2! + 3! + ... + <i>n</i>!</span>
+                        при <span class="formula"><i>n&nbsp;</i>&gt;&nbsp;10</span>.
+                    </li>
+                    <li>
+                        Составить программу вычисления точного значения суммы дробей
+                        <div class="formula" style="margin-top: 5px;">
+                            <img src="../css/img/image11.png" height=43>
+                        </div>
+                        при <span class="formula"><i>n</i> &gt; 10</span>. Ответ должен быть представлен в&nbsp;виде
+                        несократимой дроби <span class="formula"><i>P</i>/<i>Q</i></span>,
+                        где <i class="formula">P</i>, <i class="formula">Q</i> — натуральные числа.
+                    </li>
+                    <li>
+                        Вычислить точное значение <span class="formula">(<i>n<sup>n</sup>)</i>!</span>
+                        при&nbsp;<i>n</i>&nbsp;&#10878&nbsp;3.
+                    </li>
+                    <li>
+                        Составить программу вычисления точного значения суммы первых <i class="formula">n</i>
+                        членов последовательности <span class="formula">1, <i>k</i>, <i>k</i><sup>2</sup>,
+                        <i>k</i><sup>3</sup>, ..., <i>k<sup>n</sup></i> </span>
+                        (<span class="formula"><i>n</i>&nbsp;&gt;&nbsp;<span class="cod">MaxInt</span></span>).
+                        <br>
+                        <u>Указание</u>: используйте формулу суммы <i class="formula">n</i> членов геометрической
+                        прогрессии.
+                    </li>
+                    <li>
+                        Составить программу вычисления точного значения суммы первых <i class="formula">n</i> членов
+                        последовательности чисел, кратных данному натуральному числу <i class="formula">k</i>
+                        (<span class="formula"><i>n&nbsp;</i>&gt;</span>&nbsp;<span class="cod">MaxInt</span>).
+                        <br>
+                        <u>Указание</u>: используйте формулу суммы <i class="formula">n</i> членов арифметической
+                        прогрессии.
+                    </li>
+                    <li>
+                        Вычислить точное значение суммы <span class="formula">1<sup>2</sup>+ 2<sup>2</sup>+
+                        3<sup>2</sup>+ … + <i>n</i><sup>2</sup></span>
+                        (<span class="formula"><i>n</i>&nbsp;&#10878&nbsp;20000</span>).
+                    </li>
+                    <li>
+                        Вычислить точное значение суммы <span class="formula">1<sup><i>n</i></sup> +
+                        2<sup><i>n</i></sup> + 3<sup><i>n</i></sup> + ...
+                        + <i>n</i><sup><i>n</i></sup></span> (<span class="formula"><i>n</i>&nbsp;&#10878&nbsp;10</span>).
+                    </li>
+                    <li>
+                        Найти первое простое число, которое больше <span class="formula">10<sup>11</sup></span>.
+                    </li>
+                    <li>
+                        Составить программу вычисления точного значения многочлена
+                        <span class="formula">
+                            <i>a<sub>n</sub> x<sup>n</sup></i> + <i>a</i><sub><i>n</i>
+                            - 1</sub><i> x</i><sup><i>n</i> - 1</sup> + ...
+                            + <i>a</i><sub>1</sub><i> x</i> + <i>a</i><sub>0</sub>
+                        </span>,
+                        где&nbsp;<i class="formula">a<sub>i</sub></i>&nbsp;и&nbsp;<i class="formula">x</i>&nbsp;—&nbsp;
+                        целые&nbsp;числа&nbsp;больше&nbsp;<span class="formula">10<sup>11</sup></span>.
+                    </li>
+                    <li>
+                        Найти наибольший общий делитель и наименьшее общее кратное чисел <i class="formula">m</i> и
+                        <i class="formula">n</i> (<i class="formula">m</i>, <span class="formula"><i>n</i>
+                        &nbsp;&#10878&nbsp;10<sup>11</sup></span>).
+                    </li>
+                    <li>
+                        Проверить, являются ли числа <i class="formula">m</i> и <i class="formula">n</i>
+                        (<i class="formula">m</i>, <span class="formula"><i>n</i>&nbsp;&#10878&nbsp;10<sup>11
+                        </sup></span>)
+                        взаимно простыми.
+                    </li>
+                    <li>
+                        Докажите, что число <span class="formula">2<sup>19936</sup> * (2<sup>19937</sup> – 1)</span>
+                        является совершенным, т.е.&nbsp;равно сумме всех своих делителей, кроме самого себя.
+                    </li>
+                    <li>
+                        "<i>Вращающееся число"</i>.
+                        <br>
+                        Написать программу, которая находит число, обладающее следующими свойствами:
+                        <br>
+                        1) число оканчивается&nbsp;на&nbsp;5;
+                        <br>
+                        2) при&nbsp;умножении его&nbsp;на&nbsp;5 образуется новое число, которое может быть получено
+                        из&nbsp;исходного вычеркиванием цифры&nbsp;5 на&nbsp;конце и&nbsp;переписыванием
+                        ее&nbsp;в&nbsp;начало числа.
+                    </li>
+                    <li>
+                        Дана последовательность, заданная рекуррентной формулой
+                        <br>
+                        <div class="formula">
+                            <i>a</i><sub><i>n</i> + 1</sub> = 7<i>a<sub>n</sub></i> mod 2023, <i>a</i><sub>1</sub> = 1,
+                        </div>
+                        где <i>x</i> mod <i>y</i> означает остаток от деления <i>x</i> на <i>y</i>.
+                        <br>
+                        Написать программу,
+                        вычисляющую
+                        <span class="formula">
+                            <i>a<sub>n</sub></i> при 1&nbsp;&#10877&nbsp;<i>n</i>&nbsp;&#10877&nbsp;1000000000000000000000.
+                        </span>
+                    </li>
+                    <li>
+                        Дана последовательность
+                        <div class="formula">
+                            <img src="../css/img/image15.png" height=58>
+                        </div>
+                        Написать программу, находящую точное значение <span class="formula"><i>a<sub>n</sub></i></span>
+                        при <span class="formula">1&nbsp;&#10877&nbsp;<i>n</i>&nbsp;&#10877&nbsp;150</span>.
+                        <br>
+                        <u>Пример</u>. При <span class="formula"><i>n</i> = 58</span>
+                        получаем <span class="formula"><i>a<sub>n</sub></i> = 10359022039470231387111424</span>.
+                    </li>
+                    <li>
+                        Напишите программу перевода многозначного числа (с количеством знаков больше 20) в&nbsp;
+                        системы счисления с&nbsp;основанием два, восемь, шестнадцать.
+                    </li>
+                    <li>
+                        Разложить на&nbsp;простые множители натуральное число с&nbsp;количеством знаков более 11.
+                    </li>
+                    <li>
+                        <i>Умножение периодической дроби.</i>
+                        Задана некоторая положительная правильная периодическая дробь <i class="formula">Q</i>
+                        и&nbsp;натуральное число <i class="formula">N</i>.
+                        Числа <i class="formula">Q</i> и <i class="formula">N</i> таковы, что&nbsp;количество цифр,
+                        используемых для&nbsp;их&nbsp;описания, не&nbsp;превосходит&nbsp;100.
+                        При&nbsp;изображении дроби <i class="formula">Q</i> периодическая часть заключается
+                        в&nbsp;круглые скобки.
+                        <br>
+                        Требуется написать программу, которая определяет результат умножения <i class="formula">Q</i>
+                        на&nbsp;<i>N</i>, то&nbsp;есть непериодическую часть и&nbsp;минимальный период числа
+                        <span class="formula"><i>Q</i>&nbsp;&#0183&nbsp;<i>N</i></span>.
+                        <br>
+                        В случае получения результата умножения в виде конечной дроби скобки опускаются.
+                    </li>
+                </ol>
+            </div>
+
+            <div>
+                <h2>Пример работы правильной программы</h2>
+                <pre>
+Введите периодическую дробь: 0.1(6)
+Введите натуральное число: 2
+Ответ: 0.(3)
+                </pre>
+            </div>
+
+            <h2 class="stripe" id="lit">
+                Список использованной литературы
+                <a href="#head" title="Вверх"></a>
+            </h2>
+
+            <ol class="lit">
+                <li>
+                    Абрамов С.А., Гнездилова Г.Г., Капустина Е.Н., Селюн М.И. Задачи по программированию. М.: Наука, 1988.
+                </li>
+                <li>
+                    Олимпиады по информатике. Задачи и решения. Методические рекомендации для учителей и учащихся школ.
+                    Красноярск, 1991.
+                </li>
+                <li>
+                    Пильщиков В.Н. Сборник упражнений по языку Паскаль. М.: Наука, 1989.
+                </li>
+                <li>
+                    Касаткин В.Н. Информация. Алгоритмы. ЭВМ. М.: Просвещение, 1991.
+                </li>
+                <li>
+                    Хонсбергер Р. Математические изюминки. М.: Наука, 1992.
+                </li>
+                <li>
+                    Семакин И.Г., Шестаков А.П. Лекции по программированию. Пермь: изд-во ПГУ, 1998.
+                </li>
+                <li>
+                    Гусев В.А., Мордкович А.Г. Математика. Справочные материалы. М.: Просвещение, 1990.
+                </li>
+                <li>
+                    Гладков В.П. Курс лабораторных работ по программированию. Пермь: изд-во ПГТУ, 1998.
+                </li>
+            </ol>
+
+
+            <div class="footer">
+                <div class="also">
+                    Читайте также:
+                </div>
+                <div class="href">
+
+                        <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%BB%D0%B8%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0"
+                           title="Википедия">
+                            <div class="hrefs">
+                                Wikipedia: Длинная арифметика
+                            </div>
+                        </a>
+
+                        <a href="http://www.programmersforum.ru/showthread.php?t=251850" title="Форум программистов">
+                            <div class="hrefs">
+                                Форум программистов: Длинные числа
+                            </div>
+                        </a>
+
+                        <a href="http://comp-science.narod.ru/DL-AR/okulov.htm" title="Статья С.М. Окулова">
+                            <div class="hrefs">
+                                С.М. Окулов. "Длинная" арифметика
+                            </div>
+                        </a>
+
+                </div>
+                <div class="auth">
+                    Шестаков А.П., 1996-1999
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

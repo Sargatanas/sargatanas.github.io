@@ -165,9 +165,6 @@ caption {
     display: flex;
     justify-content: center;
 }
-.top {
-    padding-left: 86px;
-}
 #mult a::before,
 #tasks a::before,
 #lit a::before{
