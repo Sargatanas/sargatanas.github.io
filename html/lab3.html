@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Лабораторная работа №3</title>
-    <script src="../js/script1.js"></script>
 </head>
-<body>
+<body onload="Ex5()">
+<div>
     <div class="block ex-1">
         <h2>
             Задание №1
@@ -26,7 +26,7 @@
                 <label for="n1">
                     Введите количество элементов в последовательности:
                 </label>
-                <input type="text" id="n1">
+                <input type="number" id="n1" min="0">
                 <input type="button" onclick="Ex1()" value="Сгенерировать">
             </form>
 
@@ -62,7 +62,7 @@
         <div class="count">
             <form>
                 <label for="n2">Введите N:</label>
-                <input type="text" id="n2">
+                <input  type="number" id="n2" min="2">
                 <input type="button" onclick="Ex2()" value="Вывести">
             </form>
 
@@ -71,6 +71,145 @@
             </p>
         </div>
     </div>
+
+    <div class="block ex-3">
+        <h2>
+            Задание №3
+        </h2>
+
+        <p>
+            14.	Сколько дней прошло со дня Вашего рождения?
+        </p>
+
+        <div class="count">
+            <form>
+                <label for="n3">Введите дату вашего рождения:</label>
+                <input type="date" id="n3">
+                <input type="button" onclick="Ex3()" value="Рассчитать">
+            </form>
+
+            <p>
+                Со дня вашего рождения прошло <span id="output3"></span> дне(ей / я)
+            </p>
+        </div>
+    </div>
+
+    <div class="block ex-4">
+        <h2>
+            Задание №4
+        </h2>
+
+        <p>
+            14.	При получении полем checkbox_1 (флажок) фокуса в строке состояния должно выводиться сообщение:
+            «Определитесь с выбором»
+            <br>
+            Рекомендация: проверку осуществляйте в IE
+        </p>
+
+        <form>
+            <input type="checkbox" id="n4" onfocus="Ex_f()" onblur="Ex4_b()">
+            <label for="n4">Сделать выбор</label>
+        </form>
+    </div>
+
+    <div class="block ex-5">
+        <h2>
+            Задание №5
+        </h2>
+
+        <p>
+            14.	Написать скрипт, который каждый раз при загрузке страницы генерировал бы календарь на текущий месяц.
+        </p>
+
+        <div>
+            <table>
+                <tr>
+                    <th>ПН</th>
+                    <th>ВТ</th>
+                    <th>СР</th>
+                    <th>ЧТ</th>
+                    <th>ПТ</th>
+                    <th>СБ</th>
+                    <th>ВС</th>
+                </tr>
+                <tr>
+                    <td id="rc11"></td>
+                    <td id="rc12"></td>
+                    <td id="rc13"></td>
+                    <td id="rc14"></td>
+                    <td id="rc15"></td>
+                    <td id="rc16"></td>
+                    <td id="rc10"></td>
+                </tr>
+                <tr>
+                    <td id="rc21"></td>
+                    <td id="rc22"></td>
+                    <td id="rc23"></td>
+                    <td id="rc24"></td>
+                    <td id="rc25"></td>
+                    <td id="rc26"></td>
+                    <td id="rc20"></td>
+                </tr>
+                <tr>
+                    <td id="rc31"></td>
+                    <td id="rc32"></td>
+                    <td id="rc33"></td>
+                    <td id="rc34"></td>
+                    <td id="rc35"></td>
+                    <td id="rc36"></td>
+                    <td id="rc30"></td>
+                </tr>
+                <tr>
+                    <td id="rc41"></td>
+                    <td id="rc42"></td>
+                    <td id="rc43"></td>
+                    <td id="rc44"></td>
+                    <td id="rc45"></td>
+                    <td id="rc46"></td>
+                    <td id="rc40"></td>
+                </tr>
+                <tr>
+                    <td id="rc51"></td>
+                    <td id="rc52"></td>
+                    <td id="rc53"></td>
+                    <td id="rc54"></td>
+                    <td id="rc55"></td>
+                    <td id="rc56"></td>
+                    <td id="rc50"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="block ex-6">
+        <h2>
+            Задание №6
+        </h2>
+
+        <p>
+            Дополнить календарь следующими возможностями:
+        </p>
+
+        <p>
+            14. Кнопки, позволяющие сформировать календарь на текущий месяц предыдущего/следующего года.
+        </p>
+    </div>
+
+    <div class="block ex-7">
+        <h2>
+            Задание №7
+        </h2>
+
+        <p>
+            Разработайте форму, заполняемую пользователем Internet, на произвольную тематику. При этом должны быть
+            использованы все виды элементов, которые могут присутствовать на форме. Разработайте скрипт, проверяющий
+            правильность заполнения полей формы (не пустые ли они, соответствуют ли типы и диапазоны данных и др.)
+            При неправильном заполнении сообщить, какие поля надо исправить. Если всё заполнено верно, сообщить,
+            что данные отправлены.
+        </p>
+    </div>
+</div>
+
     <script src="../js/script.js"></script>
 </body>
 </html>
