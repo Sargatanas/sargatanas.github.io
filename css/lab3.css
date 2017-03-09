@@ -1,0 +1,16 @@
+#other-field
+ {
+    display: none;
+}
+
+option[name="science"] {
+    display: none;
+}
+
+option[name="creation"]{
+    display: none;
+}
+
+option[name="sport"] {
+    display: none;
+}

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Лабораторная работа №3</title>
+    <link href="../css/lab3.css" rel="stylesheet">
 </head>
-<body onload="Ex5()">
+<body onload="Ex5_6()">
 <div>
     <div class="block ex-1">
         <h2>
@@ -26,7 +27,7 @@
                 <label for="n1">
                     Введите количество элементов в последовательности:
                 </label>
-                <input type="number" id="n1" min="0">
+                <input type="number" id="n1">
                 <input type="button" onclick="Ex1()" value="Сгенерировать">
             </form>
 
@@ -56,13 +57,13 @@
             <br>
             Пример. <i>n</i> = 44.
             <br>
-            Числа: 17, 26, 35.
+            Числа: 8, 17, 26, 35.
         </p>
 
         <div class="count">
             <form>
                 <label for="n2">Введите N:</label>
-                <input  type="number" id="n2" min="2">
+                <input  type="number" id="n2">
                 <input type="button" onclick="Ex2()" value="Вывести">
             </form>
 
@@ -107,7 +108,7 @@
         </p>
 
         <form>
-            <input type="checkbox" id="n4" onfocus="Ex_f()" onblur="Ex4_b()">
+            <input type="checkbox" id="n4" onfocus="Ex4_f()" onblur="Ex4_b()">
             <label for="n4">Сделать выбор</label>
         </form>
     </div>
@@ -124,13 +125,16 @@
         <div>
             <table>
                 <tr>
-                    <th>ПН</th>
-                    <th>ВТ</th>
-                    <th>СР</th>
-                    <th>ЧТ</th>
-                    <th>ПТ</th>
-                    <th>СБ</th>
-                    <th>ВС</th>
+                    <th colspan="7" id="name_month"></th>
+                </tr>
+                <tr>
+                    <th>пн</th>
+                    <th>вт</th>
+                    <th>ср</th>
+                    <th>чт</th>
+                    <th>пт</th>
+                    <th>сб</th>
+                    <th>вс</th>
                 </tr>
                 <tr>
                     <td id="rc11"></td>
@@ -169,13 +173,22 @@
                     <td id="rc40"></td>
                 </tr>
                 <tr>
-                    <td id="rc51"></td>
-                    <td id="rc52"></td>
-                    <td id="rc53"></td>
-                    <td id="rc54"></td>
-                    <td id="rc55"></td>
-                    <td id="rc56"></td>
-                    <td id="rc50"></td>
+                <td id="rc51"></td>
+                <td id="rc52"></td>
+                <td id="rc53"></td>
+                <td id="rc54"></td>
+                <td id="rc55"></td>
+                <td id="rc56"></td>
+                <td id="rc50"></td>
+            </tr>
+                <tr>
+                    <td id="rc61"></td>
+                    <td id="rc62"></td>
+                    <td id="rc63"></td>
+                    <td id="rc64"></td>
+                    <td id="rc65"></td>
+                    <td id="rc66"></td>
+                    <td id="rc60"></td>
                 </tr>
             </table>
         </div>
@@ -193,6 +206,83 @@
         <p>
             14. Кнопки, позволяющие сформировать календарь на текущий месяц предыдущего/следующего года.
         </p>
+
+        <div>
+            <table>
+                <tr>
+                    <th colspan="7" id="name_month_n"></th>
+                </tr>
+                <tr>
+                    <th>пн</th>
+                    <th>вт</th>
+                    <th>ср</th>
+                    <th>чт</th>
+                    <th>пт</th>
+                    <th>сб</th>
+                    <th>вс</th>
+                </tr>
+                <tr>
+                    <td id="rcn11"></td>
+                    <td id="rcn12"></td>
+                    <td id="rcn13"></td>
+                    <td id="rcn14"></td>
+                    <td id="rcn15"></td>
+                    <td id="rcn16"></td>
+                    <td id="rcn10"></td>
+                </tr>
+                <tr>
+                    <td id="rcn21"></td>
+                    <td id="rcn22"></td>
+                    <td id="rcn23"></td>
+                    <td id="rcn24"></td>
+                    <td id="rcn25"></td>
+                    <td id="rcn26"></td>
+                    <td id="rcn20"></td>
+                </tr>
+                <tr>
+                    <td id="rcn31"></td>
+                    <td id="rcn32"></td>
+                    <td id="rcn33"></td>
+                    <td id="rcn34"></td>
+                    <td id="rcn35"></td>
+                    <td id="rcn36"></td>
+                    <td id="rcn30"></td>
+                </tr>
+                <tr>
+                    <td id="rcn41"></td>
+                    <td id="rcn42"></td>
+                    <td id="rcn43"></td>
+                    <td id="rcn44"></td>
+                    <td id="rcn45"></td>
+                    <td id="rcn46"></td>
+                    <td id="rcn40"></td>
+                </tr>
+                <tr>
+                    <td id="rcn51"></td>
+                    <td id="rcn52"></td>
+                    <td id="rcn53"></td>
+                    <td id="rcn54"></td>
+                    <td id="rcn55"></td>
+                    <td id="rcn56"></td>
+                    <td id="rcn50"></td>
+                </tr>
+                <tr>
+                    <td id="rcn61"></td>
+                    <td id="rcn62"></td>
+                    <td id="rcn63"></td>
+                    <td id="rcn64"></td>
+                    <td id="rcn65"></td>
+                    <td id="rcn66"></td>
+                    <td id="rcn60"></td>
+                </tr>
+            </table>
+        </div>
+
+        <form>
+            <input type="button" value="Предыдущий год" onclick="Ex6_p()">
+            <input type="button" value="Текущий год" onclick="Ex6()">
+            <input type="button" value="Следующий год" onclick="Ex6_n()">
+        </form>
     </div>
 
     <div class="block ex-7">
@@ -207,6 +297,162 @@
             При неправильном заполнении сообщить, какие поля надо исправить. Если всё заполнено верно, сообщить,
             что данные отправлены.
         </p>
+
+        <form>
+            <div class="personal">
+                <div>
+                    <label for="surname-field">
+                        Фамилия
+                    </label>
+                    <input type="text" id="surname-field">
+                </div>
+
+                <div>
+                    <label for="name-field">
+                        Имя
+                    </label>
+                    <input type="text" id="name-field">
+                </div>
+
+                <div>
+                    <label for="date-field">
+                        Дата рождения
+                    </label>
+                    <input type="date" id="date-field">
+                </div>
+
+                <div>
+                    <div>
+                        Пол
+                    </div>
+                    <div>
+                        <input type="radio" id="male-field" name="sex-field" value="male">
+                        <label for="male-field">
+                            мужской
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="women-field" name="sex-field" value="women">
+                        <label for="women-field">
+                            женский
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts">
+                <div>
+                    <label for='email-field'>
+                        Электронная почта
+                    </label>
+                    <input type="email" id="email-field">
+                </div>
+
+                <div>
+                    <label for='phone-field'>
+                        Мобильный телефон (8-9XX-XXX-XX-XX)
+                    </label>
+                    <input type="tel" id="phone-field" pattern="8-9[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                </div>
+
+                <div>
+                    <label for="select-field">
+                        Город
+                    </label>
+                    <select id="select-field">
+                        <option id="Moscow">Москва</option>
+                        <option id="Piter">Санкт-Петербург</option>
+                        <option id="Perm">Пермь</option>
+                        <option id="Ekat">Екатеринбург</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="interests">
+                <div>
+                    <p>
+                        Интересы
+                    </p>
+                    <div>
+                        <input type="checkbox" id="check-1" name="checkbox-field">
+                        <label for="check-1">Наука</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="check-2" name="checkbox-field">
+                        <label for="check-2">Творчество</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="check-3" name="checkbox-field">
+                        <label for="check-3">Спорт</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="check-4" name="checkbox-field">
+                        <label for="check-4">Другое</label>
+                        <textarea id="other-field" rows="1" cols="100">Укажите свои интересы</textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        Публикации
+                    </p>
+
+                    <select>
+                        <option name="common">
+                            Квант
+                        </option>
+                        <option name="common">
+                            Математическое просвещение
+                        </option>
+                        <option name="common">
+                            Соросовский образовательный журнал
+                        </option>
+
+                        <option name="science">
+                            Наука и жизнь
+                        </option>
+                        <option name="science">
+                            Азиатский вестник
+                        </option>
+                        <option name="science">
+                            Русский антропологический журнал
+                        </option>
+                        <option name="science">
+                            Журнал технической физики
+                        </option>
+
+                        <option name="creation">
+                            Иностранная литература
+                        </option>
+                        <option name="creation">
+                            Театр
+                        </option>
+                        <option name="creation">
+                            Русская музыкальная газета
+                        </option>
+                        <option name="creation">
+                            Fuzz
+                        </option>
+
+                        <option name="sport">
+                            Большой спорт
+                        </option>
+                        <option name="sport">
+                            PROспорт
+                        </option>
+                        <option name="sport">
+                            Dive Tek
+                        </option>
+                        <option name="sport">
+                            Автомотоспорт
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Сброс">
+        </form>
     </div>
 </div>
 

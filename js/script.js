@@ -53,11 +53,11 @@ function Ex2() {
             n1 = Math.floor(n1 / 10);
         }
         if (sum == cont) {
-            string = string + ' &#8196; ' + i;
+            string += ' &#8196; ' + i;
         }
     }
 
-    if (string ='' || n < 2 || n % 1 != 0) string = 'нет';
+    if (string == '' || n < 1 || n % 1 != 0) string = 'нет';
 
     document.getElementById('count2').innerHTML = String(n);
     document.getElementById('output2').innerHTML = string;
@@ -119,29 +119,156 @@ function Ex4_b() {
     window.status = '';
 }
 
-function Ex5() {
-    var d = new Date();
+function AddDate(str, nm, d, year) {
     var month = d.getMonth();
-    var year = d.getFullYear();
     var day = 1;
 
     //*Рассчитаем количество дней в текущем месяце*//
     var n;
     switch (month) {
-        case 0 || 2 || 4 || 6 || 7 || 9 || 11 : n = 31; break;
-        case 3 || 5 || 8 || 10 : n = 30; break;
+        case 0 : n = 31; break;
         case 1 : n = 28; break;
+        case 2 : n = 31; break;
+        case 3 : n = 30; break;
+        case 4 : n = 31; break;
+        case 5 : n = 30; break;
+        case 6 : n = 31; break;
+        case 7 : n = 31; break;
+        case 8 : n = 30; break;
+        case 9 : n = 31; break;
+        case 10 : n = 30; break;
+        case 11 : n = 31; break;
     }
     if (month == 1 && year % 4 == 0) n++;
 
-    var d_week, string;
-    var j = 1;
-    for (var i=1; i <= n; i++) {
+    //*Очистим таблицу*//
+    var i,j, string;
+    for (i=1; i<6; i++) {
+        for (j=0; j<7; j++) {
+            string = str + i + j;
+            document.getElementById(string).innerHTML = '';
+        }
+    }
+
+    //*Разместим даты в нужных ячейках*//
+    var d_week;
+    j = 1;
+    for (i=1; i <= n; i++) {
         day = i;
         d = new Date(year, month, day);
         d_week = d.getDay();
-        string = 'rc' + j + d_week;
-        document.getElementById(string).innerHTML = i;
+        string = str + j + d_week;
+        document.getElementById(string).innerHTML = String(i);
         if (d_week == 0) j++;
     }
+
+    var name_month = '';
+    switch (month) {
+        case 0 : name_month = 'Январь'; break;
+        case 1 : name_month = 'Февраль'; break;
+        case 2 : name_month = 'Март'; break;
+        case 3 : name_month = 'Апрель'; break;
+        case 4 : name_month = 'Май'; break;
+        case 5 : name_month = 'Июнь'; break;
+        case 6 : name_month = 'Июль'; break;
+        case 7 : name_month = 'Август'; break;
+        case 8 : name_month = 'Сентябрь'; break;
+        case 9 : name_month = 'Октябрь'; break;
+        case 10 : name_month = 'Ноябрь'; break;
+        case 11 : name_month = 'Декабрь'; break;
+    }
+
+    name_month += ' ' + year;
+
+    document.getElementById(nm).innerHTML = name_month;
 }
+
+function Ex5() {
+    var d = new Date();
+    var year = d.getFullYear();
+    AddDate('rc', 'name_month', d, year);
+}
+
+function Ex6() {
+    var d = new Date();
+    var year = d.getFullYear();
+    AddDate('rcn', 'name_month_n', d, year);
+}
+
+function Ex6_p() {
+    var d = new Date();
+    var year = d.getFullYear() - 1;
+    AddDate('rcn', 'name_month_n', d, year);
+}
+
+function Ex6_n() {
+    var d = new Date();
+    var year = d.getFullYear() + 1;
+    AddDate('rcn', 'name_month_n', d, year);
+}
+
+function Ex5_6() {
+    Ex5();
+    Ex6();
+}
+
+function Hidden() {
+    var textarea = document.getElementById('other-field');
+    if(this.checked)
+        textarea.style.display = 'block';
+    else
+        textarea.style.display = 'none'
+}
+
+document.getElementById('check-4').onchange = Hidden;
+
+function Ex7_1() {
+    var opt = document.getElementsByName('science');
+    if(this.checked)
+        for (var i = 0; i < opt.length; i++)
+        {
+            opt[i].style.display = 'block';
+        }
+
+    else
+        for (var j = 0; j < opt.length; j++)
+        {
+            opt[j].style.display = 'none';
+        }
+}
+
+document.getElementById('check-1').onchange = Ex7_1;
+
+function Ex7_2() {
+    var opt = document.getElementsByName('creation');
+    if(this.checked)
+        for (var i = 0; i < opt.length; i++)
+        {
+            opt[i].style.display = 'block';
+        }
+
+    else
+        for (var j = 0; j < opt.length; j++)
+        {
+            opt[j].style.display = 'none';
+        }
+}
+
+document.getElementById('check-2').onchange = Ex7_2;
+
+function Ex7_3() {
+    var opt = document.getElementsByName('sport');
+    if(this.checked)
+        for (var i = 0; i < opt.length; i++)
+        {
+            opt[i].style.display = 'block';
+        }
+
+    else
+        for (var j = 0; j < opt.length; j++)
+        {
+            opt[j].style.display = 'none';
+        }
+}
+
+document.getElementById('check-3').onchange = Ex7_3;
