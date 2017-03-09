@@ -171,9 +171,8 @@ caption {
 .video {
     text-align: center;
 }
-#mult a::before,
-#tasks a::before,
-#lit a::before{
+
+#mult a::before{
     content: '';
     display: block;
     position: fixed;
@@ -188,9 +187,8 @@ caption {
     background: #A0CAAB;
     opacity: 0.5;
 }
-#mult a::after,
-#tasks a::after,
-#lit a::after{
+
+#mult a::after{
     content: '';
     display: block;
     position: fixed;
@@ -204,24 +202,19 @@ caption {
     background: url('img/arrow-top.svg') no-repeat;
     opacity: 0.3;
 }
+
 #mult a::before,
-#tasks a::before,
-#lit a::before,
-#mult a::after,
-#tasks a::after,
-#lit a::after{
+#mult a::after{
     transition-duration: 0.3s;
 }
-#mult a:hover::before,
-#tasks a:hover::before,
-#lit a:hover::before {
+
+#mult a:hover::before {
     background: #6275f6;
     opacity: 1;
     cursor: pointer;
 }
-#mult a:hover::after,
-#tasks a:hover::after,
-#lit a:hover::after{
+
+#mult a:hover::after{
     opacity: 1;
     cursor: pointer;
 }
