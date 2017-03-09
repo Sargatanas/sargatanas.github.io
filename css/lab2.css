@@ -211,10 +211,37 @@ caption {
 #mult a:hover::before {
     background: #6275f6;
     opacity: 1;
-    cursor: pointer;
 }
 
 #mult a:hover::after{
     opacity: 1;
-    cursor: pointer;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    width: 110px;
+    height: 18px;
+    padding: 10px;
+    margin: 20px;
+    background: #85ac8f;
+    border-radius: 5px;
+}
+
+#back {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    padding: 10px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+a.pos:hover .back {
+    background: #6275f6;
 }

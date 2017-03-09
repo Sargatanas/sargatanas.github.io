@@ -11,7 +11,7 @@ function Ex1() {
     var i, temp;
     for (i=1; i<=n; i++) {
         temp = Math.floor(Math.random() * 10);
-        string = string + ' &#8196; ' + temp;
+        string = string + temp + ' &#8196; ';
         if (temp < min) {
             min = temp;
             count = 1
@@ -23,7 +23,7 @@ function Ex1() {
 
     if (n < 1 || n % 1 != 0) {
         min = 'не существует';
-        string = '';
+        string = '&#8199;';
         count = 0;
     }
 
@@ -57,7 +57,11 @@ function Ex2() {
         }
     }
 
-    if (string == '' || n < 1 || n % 1 != 0) string = 'нет';
+    if (string == '' || n < 1 || n % 1 != 0)
+    {
+        string = 'нет';
+        n = 'данным';
+    }
 
     document.getElementById('count2').innerHTML = String(n);
     document.getElementById('output2').innerHTML = string;
@@ -113,10 +117,12 @@ function Ex3() {
 
 function Ex4_f() {
     window.status = 'Определитесь с выбором';
+    document.getElementById('status_bar').innerHTML = 'Определитесь с выбором';
 }
 
 function Ex4_b() {
     window.status = '';
+    document.getElementById('status_bar').innerHTML = '&#8199;';
 }
 
 function AddDate(str, nm, d, year) {
@@ -272,3 +278,126 @@ function Ex7_3() {
 }
 
 document.getElementById('check-3').onchange = Ex7_3;
+
+function Er() {
+    var srn = document.getElementById('surname-field').value;
+    var n = document.getElementById('name-field').value;
+    var email = document.getElementById('email-field').value;
+    var city = document.getElementById('select-field').value;
+    var publication = document.getElementById('selector').value;
+    var crit2 = true;
+
+    if (srn == '')
+    {
+        document.getElementById('er1').innerHTML = 'Это поле обязательно для заполнения';
+        document.getElementById('er1').style.color = 'red';
+        document.getElementById('surname-field').style.border = '1px solid red';
+        crit2 = false;
+    }
+    else
+    {
+        var crit = true;
+        var length = srn.length;
+        var char = srn.charCodeAt(0);
+        if (char < 65 || char > 90 && char < 1040 || char >= 1066 && char <=1068 || char > 1071)
+            crit = false;
+        for (var i = 1; i < length; i++)
+        {
+            char = srn.charCodeAt(i);
+            if (char < 97 || char > 122 && char < 1072 || char > 1103)
+                crit = false;
+        }
+        if (!crit)
+        {
+            document.getElementById('er1').innerHTML = 'введите корректную фамилию <br>(с заглавной буквы, без небуквенных символов)';
+            document.getElementById('er1').style.color = 'red';
+            document.getElementById('surname-field').style.border = '1px solid red';
+        }
+        else
+        {
+            document.getElementById('er1').innerHTML = '';
+            document.getElementById('er1').style.color = 'lightgray';
+            document.getElementById('surname-field').style.border = '1px solid gray';
+        }
+    }
+
+    if (n == '')
+    {
+        document.getElementById('er2').innerHTML = 'Это поле обязательно для заполнения';
+        document.getElementById('er2').style.color = 'red';
+        document.getElementById('name-field').style.border = '1px solid red';
+        crit2 = false;
+    }
+    else
+    {   var length1 = n.length;
+        var crit1 = true;
+        var char1 = n.charCodeAt(0);
+        if (char1 < 65 || char1 > 90 && char1 < 1040 || char1 >= 1066 && char1 <=1068 || char1 > 1071)
+            crit1 = false;
+        for (var j = 1; j < length; j++)
+        {
+            char1 = n.charCodeAt(j);
+            if (char1 < 97 || char1 > 122 && char1 < 1072 || char1 > 1103)
+                crit1 = false;
+        }
+        if (!crit1)
+        {
+            document.getElementById('er2').innerHTML = 'введите корректное имя <br>(с заглавной буквы, без небуквенных символов)';
+            document.getElementById('er2').style.color = 'red';
+            document.getElementById('name-field').style.border = '1px solid red';
+            crit2 = false;
+        }
+        else
+        {
+            document.getElementById('er2').innerHTML = '';
+            document.getElementById('er2').style.color = 'lightgray';
+            document.getElementById('name-field').style.border = '1px solid gray';
+        }
+    }
+
+    if (email == '')
+    {
+        document.getElementById('er3').innerHTML = 'Это поле обязательно для заполнения';
+        document.getElementById('er3').style.color = 'red';
+        document.getElementById('email-field').style.border = '1px solid red';
+        crit2 = false;
+    }
+    else
+    {
+        document.getElementById('er3').innerHTML = '';
+        document.getElementById('er3').style.color = 'lightgray';
+        document.getElementById('email-field').style.border = '1px solid gray';
+    }
+
+    if (city == '-выберите город-')
+    {
+        document.getElementById('er5').innerHTML = 'Выберите, пожалуйста, ваш город';
+        document.getElementById('er5').style.color = 'red';
+        document.getElementById('select-field').style.border = '1px solid red';
+        crit2 = false;
+    }
+    else
+    {
+        document.getElementById('er5').innerHTML = '';
+        document.getElementById('er5').style.color = 'lightgray';
+        document.getElementById('select-field').style.border = '1px solid gray';
+    }
+
+    if (publication == '')
+    {
+        document.getElementById('er6').innerHTML = 'Выберите, пожалуйста, журнал или газету для подписки';
+        document.getElementById('er6').style.color = 'red';
+        document.getElementById('selector').style.border = '1px solid red';
+        crit2 = false;
+    }
+    else
+    {
+        document.getElementById('er6').innerHTML = '';
+        document.getElementById('er6').style.color = 'lightgray';
+        document.getElementById('selector').style.border = '1px solid gray';
+    }
+
+    if (crit && crit1 && crit2)
+        form.submit();
+}
+
