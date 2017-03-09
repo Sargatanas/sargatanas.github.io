@@ -162,8 +162,7 @@ caption {
     color: #757575;
 }
 .video {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 #mult a::before,
 #tasks a::before,
