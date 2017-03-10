@@ -386,12 +386,15 @@ hr {
 #back-field {
     display: block;
     position: fixed;
-    left: 426px;
-    top: 19px;
+    left: 50%;
+    top: 0;
     width: 50px;
     height: 50px;
     border-radius: 25px;
     background: #A0CAAB;
+    transform:
+            translateX(-534px)
+            translateY(22px);
     opacity: 0.5;
     transition-duration: 0.3s;
 }
@@ -399,11 +402,14 @@ hr {
 #back {
     display: block;
     position: fixed;
-    left: 436px;
-    top: 27px;
+    left: 50%;
+    top: 0;
     width: 36px;
     height: 36px;
     background: url('img/arrow-left.svg') no-repeat;
+    transform:
+            translateX(-523px)
+            translateY(29px);
     opacity: 0.3;
     transition-duration: 0.3s;
 }
@@ -411,28 +417,37 @@ hr {
 #text {
     display: block;
     position: fixed;
-    left: 410px;
-    top: 35px;
+    left: 50%;
+    top: 0;
     font-family: Arial, sans-serif;
     font-size: 18px;
     color: transparent;
+    transform:
+            translateX(-520px)
+            translateY(37px);
     transition-duration: 0.3s;
 }
 
 #pos:hover #back-field {
-    left: 336px;
     width: 140px;
     background: #F6AC60;
+    transform:
+            translateX(-624px)
+            translateY(22px);
     opacity: 1;
 }
 
 #pos:hover #back {
-    left: 346px;
+    transform:
+            translateX(-613px)
+            translateY(29px);
     opacity: 1;
 }
 
 #pos:hover #text {
-    left: 385px;
     width: 100%;
+    transform:
+            translateX(-570px)
+            translateY(37px);
     color: white;
 }
