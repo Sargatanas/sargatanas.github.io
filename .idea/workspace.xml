@@ -24,8 +24,8 @@
       <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="357">
+              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -34,8 +34,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="468">
+              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -44,8 +44,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="32" />
+            <state relative-caret-position="120">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc;n#randomInteger#0" expanded="false" />
               </folding>
@@ -92,8 +92,8 @@
         <option value="$PROJECT_DIR$/html/lab3.html" />
         <option value="$PROJECT_DIR$/game1/game.html" />
         <option value="$PROJECT_DIR$/game1/style.css" />
-        <option value="$PROJECT_DIR$/game/game.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/game/game.html" />
         <option value="$PROJECT_DIR$/game/style.css" />
         <option value="$PROJECT_DIR$/game/script.js" />
       </list>
@@ -302,12 +302,12 @@
       <workItem from="1489141007484" duration="1507000" />
       <workItem from="1489247789024" duration="441000" />
       <workItem from="1489255483313" duration="10243000" />
-      <workItem from="1489301631369" duration="6828000" />
+      <workItem from="1489301631369" duration="11856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139135000" />
+    <option name="totallyTimeSpent" value="144163000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -345,7 +345,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -657,26 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-226">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#Ex1#0" expanded="false" />
-            <element signature="n#!!block;n#Ex2#0" expanded="false" />
-            <element signature="n#!!block;n#CountDay#0" expanded="false" />
-            <element signature="n#!!block;n#Ex3#0" expanded="false" />
-            <element signature="n#!!block;n#Ex4_f#0" expanded="false" />
-            <element signature="n#!!block;n#Ex4_b#0" expanded="false" />
-            <element signature="n#!!block;n#AddDate#0" expanded="false" />
-            <element signature="n#!!block;n#Ex6_n#0" expanded="false" />
-            <element signature="n#!!block;n#Ex5_6#0" expanded="false" />
-            <element signature="n#!!block;n#Ex7_1#0" expanded="false" />
-            <element signature="n#!!block;n#Ex7_3#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game1/game.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -701,14 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -717,18 +689,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1105">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#Ex1#0" expanded="false" />
+            <element signature="n#!!block;n#Ex2#0" expanded="false" />
+            <element signature="n#!!block;n#CountDay#0" expanded="false" />
+            <element signature="n#!!block;n#Ex3#0" expanded="false" />
+            <element signature="n#!!block;n#Ex4_f#0" expanded="false" />
+            <element signature="n#!!block;n#Ex4_b#0" expanded="false" />
+            <element signature="n#!!block;n#AddDate#0" expanded="false" />
+            <element signature="n#!!block;n#Ex6_n#0" expanded="false" />
+            <element signature="n#!!block;n#Ex5_6#0" expanded="false" />
+            <element signature="n#!!block;n#Ex7_1#0" expanded="false" />
+            <element signature="n#!!block;n#Ex7_3#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        <state relative-caret-position="468">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="32" />
+        <state relative-caret-position="120">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc;n#randomInteger#0" expanded="false" />
           </folding>
