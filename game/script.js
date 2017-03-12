@@ -8,7 +8,14 @@ function randomInteger(min, max) {
     return rand;
 }
 
+function Null() {
+}
+
+var timeId = setTimeout(Null, 0);
+
 function Run() {
+    console.log(timeId, ' ');
+    clearTimeout(timeId);
     var w = document.documentElement.clientWidth;
     var h = document.documentElement.clientHeight;
     var maxw = w - 150;
@@ -33,6 +40,11 @@ function Run() {
     document.getElementById('img').style.background = 'url("img/lisa.gif") no-repeat';
     document.getElementById('img').style.backgroundSize = '150px 138px';
 
-    /*document.getElementById('img').style.background = 'url("img/lisa.png") no-repeat';
-    document.getElementById('img').style.backgroundSize = '200px 96px';*/
+    timeId = setTimeout(Stop, sec * 1000);
+    console.log(timeId, ' ');
+}
+
+function Stop() {
+    document.getElementById('img').style.background = 'url("img/lisa.png") no-repeat';
+    document.getElementById('img').style.backgroundSize = '150px 138px';
 }
