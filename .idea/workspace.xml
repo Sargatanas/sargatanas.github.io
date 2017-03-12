@@ -34,8 +34,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="94">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -90,13 +90,13 @@
         <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/css/lab3.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/game/style.css" />
         <option value="$PROJECT_DIR$/game1/style.css" />
         <option value="$PROJECT_DIR$/game1/script.js" />
         <option value="$PROJECT_DIR$/game1/game.html" />
         <option value="$PROJECT_DIR$/html/lab3.html" />
         <option value="$PROJECT_DIR$/game/game.html" />
         <option value="$PROJECT_DIR$/game/script.js" />
+        <option value="$PROJECT_DIR$/game/style.css" />
       </list>
     </option>
   </component>
@@ -303,12 +303,12 @@
       <workItem from="1489141007484" duration="1507000" />
       <workItem from="1489247789024" duration="441000" />
       <workItem from="1489255483313" duration="10243000" />
-      <workItem from="1489301631369" duration="12929000" />
+      <workItem from="1489301631369" duration="13190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145236000" />
+    <option name="totallyTimeSpent" value="145497000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -801,8 +801,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="94">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>

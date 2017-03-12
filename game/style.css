@@ -5,8 +5,8 @@ body {
 #fox  {
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 45%;
+    left: 45%;
     transform: scaleX(-1);
     transition-duration: 1s;
     transition-timing-function: linear;
