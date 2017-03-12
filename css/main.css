@@ -11,8 +11,8 @@ body, html {
 }
 
 .area-small {
-    width: 1000px;
-    height: 600px;
+    width: 40%;
+    height: 50%;
     background-color: white;
     border-radius: 8px;
 }
@@ -27,7 +27,7 @@ h1 {
     margin-bottom: 0;
     margin-top: 0;
     background-color: #6CB27F;
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
     color: #FFFFFF;
 }
