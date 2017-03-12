@@ -89,13 +89,30 @@ body {
     cursor: none;
 }
 
+@keyframes help {
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
 .help {
     display: flex;
     flex-direction: column;
+    animation-name: help;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
     width: 50px;
     height: 50px;
     text-align: center;
-    background: rgba(255,144,0,0.6);
+    background: rgba(0, 37, 6, 0.3);
     border: 2px solid white;
     border-radius: 30px;
     user-select: none;
@@ -112,9 +129,9 @@ body {
     transition-duration: 0.3s;
 }
 
-.mi {
+#mi {
     display: none;
-    width: 160px;
+    width: 180px;
     margin: auto;
     font-family: Arial, sans-serif;
     font-size: 20px;
@@ -123,7 +140,8 @@ body {
 }
 
 .help:hover {
-    width: 160px;
+    width: 180px;
+    animation-duration: 0s;
 }
 
 .help:hover .click {
@@ -131,7 +149,7 @@ body {
     color: transparent;
 }
 
-.help:hover .mi {
+.help:hover #mi {
     display: inline;
     color: white;
 }

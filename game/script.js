@@ -25,7 +25,7 @@ function Fox() {
 
     //вычислим время выполнения движения
     var sec = Math.sqrt(Math.pow((ch - rh) , 2) +  Math.pow((cw - rw) , 2));
-    sec = (sec / 2200) * 2;
+    sec = (sec / 2200) * 5;
     sec = Math.floor(sec * 100) / 100;
 
     if (rw - cw < 0)
@@ -62,6 +62,18 @@ function Catch() {
     document.getElementById('fox').style.top = document.getElementById('fox').getBoundingClientRect().top + 'px';
     document.getElementById('fox').style.left = document.getElementById('fox').getBoundingClientRect().left + 'px';
 
+    var n = randomInteger(1, 5);
+    var string;
+    switch(n)
+    {
+        case 1: string = 'Ми, ми, ми...'; break;
+        case 2: string = 'Свободу лисе!'; break;
+        case 3: string = 'Ну отпустите'; break;
+        case 4: string = 'Не буду больше'; break;
+        case 5: string = 'Ну позязя...'; break;
+    }
+
+    document.getElementById('mi').innerHTML = string;
     document.getElementById('fox').style.display = 'none';
     document.getElementById('CATCH').style.display = 'block';
     document.getElementById('field').style.display = 'none';
