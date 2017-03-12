@@ -1,0 +1,31 @@
+body {
+    background: url("img/grass.png");
+}
+
+#fox  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(-1);
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-property: top, left;
+}
+
+#img {
+    background: url("img/lisa.png") no-repeat;
+    background-size: 150px 138px;
+    width: 150px;
+    height: 138px;
+}
+
+.shadow {
+    position: absolute;
+    width: 130px;
+    height: 20px;
+    background: #000000;
+    border-radius: 30%;
+    opacity: 0.4;
+    transform: translateY(-20px);
+    filter: blur(5px);
+}
