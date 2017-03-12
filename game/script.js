@@ -17,15 +17,15 @@ function Fox() {
     var w = document.documentElement.clientWidth;
     var h = document.documentElement.clientHeight;
     var maxw = w - 150;
-    var maxh = h - 150;
+    var maxh = h - 200;
     var rw = randomInteger(0 , maxw);
-    var rh = randomInteger(0 , maxh);
+    var rh = randomInteger(200 , maxh);
     var ch = document.getElementById('fox').getBoundingClientRect().top;
     var cw = document.getElementById('fox').getBoundingClientRect().left;
 
     //вычислим время выполнения движения
     var sec = Math.sqrt(Math.pow((ch - rh) , 2) +  Math.pow((cw - rw) , 2));
-    sec = (sec / 2200) * 2.5;
+    sec = (sec / 2200) * 2;
     sec = Math.floor(sec * 100) / 100;
 
     if (rw - cw < 0)
@@ -64,9 +64,11 @@ function Catch() {
 
     document.getElementById('fox').style.display = 'none';
     document.getElementById('CATCH').style.display = 'block';
+    document.getElementById('field').style.display = 'none';
 }
 
 function Free() {
     document.getElementById('fox').style.display = 'block';
     document.getElementById('CATCH').style.display = 'none';
+    document.getElementById('field').style.display = 'block';
 }

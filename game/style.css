@@ -60,7 +60,7 @@ body {
     filter: blur(5px);
 }
 
-.field {
+#field {
     position: absolute;
     top: 40%;
     left: 40%;
@@ -90,8 +90,48 @@ body {
 }
 
 .help {
-    padding: 10px;
-    background: white;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background: rgba(255,144,0,0.6);
+    border: 2px solid white;
+    border-radius: 30px;
     user-select: none;
+    transition-duration: 0.3s;
+}
+
+.click {
+    display: inline;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    transition-duration: 0.3s;
+}
+
+.mi {
+    display: none;
+    width: 160px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: transparent;
+    transition-duration: 0.5s;
+}
+
+.help:hover {
+    width: 160px;
+}
+
+.help:hover .click {
+    display: none;
+    color: transparent;
+}
+
+.help:hover .mi {
+    display: inline;
+    color: white;
 }
