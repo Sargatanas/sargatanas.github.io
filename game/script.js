@@ -25,7 +25,7 @@ function Fox() {
 
     //вычислим время выполнения движения
     var sec = Math.sqrt(Math.pow((ch - rh) , 2) +  Math.pow((cw - rw) , 2));
-    sec = (sec / 2200) * 3;
+    sec = (sec / 2200) * 2;
     sec = Math.floor(sec * 100) / 100;
 
     if (rw - cw < 0)
