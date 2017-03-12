@@ -12,7 +12,6 @@ var timeId = 1;
 
 function Fox() {
     clearTimeout(timeId);
-    console.log(timeId);
 
     var w = document.documentElement.clientWidth;
     var h = document.documentElement.clientHeight;
@@ -40,7 +39,6 @@ function Fox() {
     Run();
 
     timeId = setTimeout(Stop, sec * 1000);
-    console.log(timeId);
 
 }
 
