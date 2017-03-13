@@ -1,222 +1,179 @@
-﻿/**
- Задание 1
- **/
-
+﻿// Задание 1
 function Ex1() {
     var n = document.getElementById('n1').value;
-    var min = 101;
     var count = 0;
     var string = '';
+    var min;
 
-    var i, temp;
-    for (i=1; i<=n; i++) {
-        temp = Math.floor(Math.random() * 10);
-        string = string + temp + ' &#8196; ';
-        if (temp < min) {
-            min = temp;
-            count = 1
-        }
-        else {
-            if (temp == min) count++;
-        }
-    }
-
+    //обработаем введенные данные на валидность
     if (n < 1 || n % 1 != 0) {
-        min = 'не существует';
-        string = '&#8199;';
-        count = 0;
+        string = 'не сгенерирована';
+        min = '#';
+        count = '#';
+    }
+    else
+    {
+        //считаем первый элемент
+        min = Math.floor(Math.random() * 20);
+        string = string + min + ' &#8196;&#8196; ';
+
+        //накопим остальные
+        var temp;
+        for (var i = 1; i < n; i++) {
+            temp = Math.floor(Math.random() * 20);
+            string = string + temp + ' &#8196; ';
+            if (temp < min) {
+                min = temp;
+                count = 1
+            }
+            else
+                if (temp == min) count++;
+        }
     }
 
+    //выведем результат
     document.getElementById('output1').innerHTML = string;
     document.getElementById('min1').innerHTML = String(min);
     document.getElementById('count1').innerHTML = String(count);
 }
 
+// Задание 2
 function Ex2() {
     var n = document.getElementById('n2').value;
-    var cont, n1;
     var string = '';
 
-    n1 = n;
-    cont = 0;
-    while (n1 > 0) {
-        cont += n1 % 10;
-        n1 = Math.floor(n1 / 10);
-    }
+    //вычислим сумму цифр "контрольного" числа
+    var cont_sum = 0;
+    for (var n1 = n; n1 > 0; n1 = Math.floor(n1 / 10))
+        cont_sum += n1 % 10;
 
-    var i, sum;
-    for (i=1; i<n; i++) {
-        n1 = i;
+    //проверим числа от  1 до n-1
+    var sum;
+    for (var i = 1; i < n; i++) {
         sum = 0;
-        while (n1 > 0) {
+        for (n1 = i; n1 > 0; n1 = Math.floor(n1 / 10))
             sum += n1 % 10;
-            n1 = Math.floor(n1 / 10);
-        }
-        if (sum == cont) {
+
+        if (sum == cont_sum)
             string += ' &#8196; ' + i;
-        }
     }
 
     if (string == '' || n < 1 || n % 1 != 0)
     {
         string = 'нет';
-        n = 'данным';
+        n = '#';
     }
 
+    //выведем результат
     document.getElementById('count2').innerHTML = String(n);
     document.getElementById('output2').innerHTML = string;
 }
 
-function CountDay(y, m, d) {
-    var count, i;
-    count = d;
-    for (i=1; i <= m; i++) {
-        switch (i) {
-            case 1 : count += 31; break;
-            case 2 : count += 28; break;
-            case 3 : count += 31; break;
-            case 4 : count += 30; break;
-            case 5 : count += 31; break;
-            case 6 : count += 30; break;
-            case 7 : count += 31; break;
-            case 8 : count += 31; break;
-            case 9 : count += 30; break;
-            case 10 : count += 31; break;
-            case 11 : count += 30; break;
-        }
-    }
-    if (y % 4 == 0) count++;
-    return count;
-}
-
+// Задание 3
 function Ex3() {
-    var data = document.getElementById('n3').value;
-    var d = new Date(data);
-    var day = d.getDate();
-    var month = d.getMonth();
-    var year = d.getFullYear();
-    var cur_day = new Date().getDate();
-    var cur_month = new Date().getMonth();
-    var cur_year = new Date().getFullYear();
-    var count = 0;
+    var data = new Date(document.getElementById('n3').value);
+    var cur_data = new Date();
 
-    count = CountDay(year, month, day);
-    if (year % 4 == 0) {
-        count = 366 - count;
-    }
-    else {
-        count = 365 - count;
-    }
-    count += (cur_year - year - 1) * 365 + CountDay(cur_year, cur_month, cur_day);
-    for (var i=year; i<cur_year; i++) {
-        if (i % 4 == 0) count++;
-    }
-    document.getElementById('output3').innerHTML = String(count);
+    //вычислим разницу между датами
+    var dif_date = cur_data.getTime() - data.getTime();
+    dif_date = Math.floor(dif_date/1000/60/60/24) + 1;
 
+    //выведем результат
+    document.getElementById('output3').innerHTML = String(dif_date);
+
+    //поставим в правильный педаеж слово "день"
+    if (dif_date % 10 == 1 && dif_date != 11)
+        document.getElementById('count3').innerHTML = 'день';
+    else
+        if (dif_date % 10 == 2 && dif_date != 12 ||
+            dif_date % 10 == 3 && dif_date != 13 ||
+            dif_date % 10 == 4 && dif_date != 14)
+            document.getElementById('count3').innerHTML = 'дня';
+        else
+            document.getElementById('count3').innerHTML = 'дней';
 }
 
+// Задание 4
 function Ex4_f() {
     window.status = 'Определитесь с выбором';
     document.getElementById('status_bar').innerHTML = 'Определитесь с выбором';
 }
-
 function Ex4_b() {
     window.status = '';
     document.getElementById('status_bar').innerHTML = '&#8199;';
 }
 
-function AddDate(str, nm, d, year) {
-    var month = d.getMonth();
-    var day = 1;
+// К заданию 5 и 6
+function AddCalendar(id, year) {
+    //рассчитаем количество дней в месяце
+    var date = new Date(year, new Date().getMonth(), 1);
+    var month = date.getMonth();
+    var count_days = 33 - new Date(year, date.getMonth(), 33).getDate();
 
-    //*Рассчитаем количество дней в текущем месяце*//
-    var n;
+    //получим название месяца и год
+    var string = '';
     switch (month) {
-        case 0 : n = 31; break;
-        case 1 : n = 28; break;
-        case 2 : n = 31; break;
-        case 3 : n = 30; break;
-        case 4 : n = 31; break;
-        case 5 : n = 30; break;
-        case 6 : n = 31; break;
-        case 7 : n = 31; break;
-        case 8 : n = 30; break;
-        case 9 : n = 31; break;
-        case 10 : n = 30; break;
-        case 11 : n = 31; break;
+        case 0 : string = 'Январь'; break;
+        case 1 : string = 'Февраль'; break;
+        case 2 : string = 'Март'; break;
+        case 3 : string = 'Апрель'; break;
+        case 4 : string = 'Май'; break;
+        case 5 : string = 'Июнь'; break;
+        case 6 : string = 'Июль'; break;
+        case 7 : string = 'Август'; break;
+        case 8 : string = 'Сентябрь'; break;
+        case 9 : string = 'Октябрь'; break;
+        case 10 : string = 'Ноябрь'; break;
+        case 11 : string = 'Декабрь'; break;
     }
-    if (month == 1 && year % 4 == 0) n++;
+    string += ' ' + date.getFullYear();
 
-    //*Очистим таблицу*//
-    var i,j, string;
-    for (i=1; i<6; i++) {
-        for (j=0; j<7; j++) {
-            string = str + i + j;
-            document.getElementById(string).innerHTML = '';
+    //очистим календарь до шапки
+    document.getElementById(id).innerHTML = '<tr><th colspan="7" class="table-header">' + string + '</th></tr>';
+    string = '<tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th>'; //сюда будем накапливать данные о строке таблицы
+    string += '<th>пт</th><th>сб</th><th>вс</th></tr>';
+    document.getElementById(id).innerHTML += string;
+
+    //рассчитаем день недели
+    var day = date.getDay();
+    if (day == 0) day = 7;
+
+    // заполним первую строку календаря
+    string = '<tr>';
+    for (var i = 1; i < day; i++)
+        string += '<td>&#8196;</td>';
+    var cur_days = count_days - 1;
+    for (i = day; i <= 7; i++)
+    {
+        string += '<td>' + (count_days - cur_days) + '</td>';
+        cur_days--;
+    }
+    document.getElementById(id).innerHTML += string + '</tr>';
+
+    // заполним прочие ячейки
+    for (; cur_days > 0;)
+    {
+        string = '<tr>';
+        for (i = 1; i <= 7; i++)
+        {
+            if (cur_days >= 0)
+            {
+                if (new Date().getDate() == count_days - cur_days)
+                    string += '<td class="cur_date">';
+                else
+                    string += '<td>';
+                string += (count_days - cur_days) + '</td>';
+                cur_days--;
+            }
+            else
+                string += '<td>&#8196;</td>';
         }
+        document.getElementById(id).innerHTML += string + '</tr>';
     }
-
-    //*Разместим даты в нужных ячейках*//
-    var d_week;
-    j = 1;
-    for (i=1; i <= n; i++) {
-        day = i;
-        d = new Date(year, month, day);
-        d_week = d.getDay();
-        string = str + j + d_week;
-        document.getElementById(string).innerHTML = String(i);
-        if (d_week == 0) j++;
-    }
-
-    var name_month = '';
-    switch (month) {
-        case 0 : name_month = 'Январь'; break;
-        case 1 : name_month = 'Февраль'; break;
-        case 2 : name_month = 'Март'; break;
-        case 3 : name_month = 'Апрель'; break;
-        case 4 : name_month = 'Май'; break;
-        case 5 : name_month = 'Июнь'; break;
-        case 6 : name_month = 'Июль'; break;
-        case 7 : name_month = 'Август'; break;
-        case 8 : name_month = 'Сентябрь'; break;
-        case 9 : name_month = 'Октябрь'; break;
-        case 10 : name_month = 'Ноябрь'; break;
-        case 11 : name_month = 'Декабрь'; break;
-    }
-
-    name_month += ' ' + year;
-
-    document.getElementById(nm).innerHTML = name_month;
 }
+AddCalendar('cal_1', new Date().getFullYear());
+AddCalendar('cal_2', new Date().getFullYear());
 
-function Ex5() {
-    var d = new Date();
-    var year = d.getFullYear();
-    AddDate('rc', 'name_month', d, year);
-}
-
-function Ex6() {
-    var d = new Date();
-    var year = d.getFullYear();
-    AddDate('rcn', 'name_month_n', d, year);
-}
-
-function Ex6_p() {
-    var d = new Date();
-    var year = d.getFullYear() - 1;
-    AddDate('rcn', 'name_month_n', d, year);
-}
-
-function Ex6_n() {
-    var d = new Date();
-    var year = d.getFullYear() + 1;
-    AddDate('rcn', 'name_month_n', d, year);
-}
-
-function Ex5_6() {
-    Ex5();
-    Ex6();
-}
 
 function Hidden() {
     var textarea = document.getElementById('other-field');

@@ -5,7 +5,7 @@
     <title>Лабораторная работа №3</title>
     <link href="../css/lab3.css" rel="stylesheet">
 </head>
-<body onload="Ex5_6()">
+<body>
 <div>
 
     <!--[if !IE]><!-->
@@ -14,6 +14,7 @@
         <span id="back"></span>
         <div id="text">НАЗАД</div>
     </a>
+    <a href="#head" title="Вверх" id="up"></a>
     <!-- <![endif]-->
 
     <div class="header">
@@ -35,8 +36,8 @@
     </div>
 
     <div class="container">
-        <div class="block ex-1" id="1">
-            <a href="#head" title="Вверх" id="up"></a>
+        <div class="block" id="1">
+
 
             <h2>
                 Задание №1
@@ -69,15 +70,15 @@
                 <p class="task none">
                     Сгенерированная последовательность:
                     <br>
-                    <span id="output1">&#8199;</span>
+                    <span id="output1">&#8196;</span>
                 </p>
 
                 <p class="task none">
-                    Минимальный элемент: <span id="min1">&#8199;</span>
+                    Минимальный элемент: <span id="min1">#</span>
                 </p>
 
                 <p class="task none last">
-                    Встречается <span id="count1">&#8199;</span> раз(а)
+                    Встречается <span id="count1">#</span> раз(а)
                 </p>
             </div>
         </div>
@@ -108,7 +109,7 @@
                 </form>
 
                 <p class="task none last">
-                    Числа, сумма цифр которых совпадает с <span id="count2">данным</span>:
+                    Числа, сумма цифр которых совпадает с <span id="count2">#</span>:
                     <br>
                     <span id="output2">&#8199;</span>
                 </p>
@@ -135,7 +136,7 @@
                 </form>
 
                 <p class="task none last">
-                    Со дня вашего рождения прошло <span id="output3"></span> дне(ей / я)
+                    Со дня вашего рождения прошло <span id="output3">#</span> <span id="count3">дней</span>
                 </p>
             </div>
         </div>
@@ -171,74 +172,7 @@
             </p>
 
             <div class="task none last">
-                <table>
-                    <tr>
-                        <th colspan="7" id="name_month"></th>
-                    </tr>
-                    <tr>
-                        <th>пн</th>
-                        <th>вт</th>
-                        <th>ср</th>
-                        <th>чт</th>
-                        <th>пт</th>
-                        <th>сб</th>
-                        <th>вс</th>
-                    </tr>
-                    <tr>
-                        <td id="rc11">&#8199;</td>
-                        <td id="rc12">&#8199;</td>
-                        <td id="rc13">&#8199;</td>
-                        <td id="rc14">&#8199;</td>
-                        <td id="rc15">&#8199;</td>
-                        <td id="rc16">&#8199;</td>
-                        <td id="rc10">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rc21">&#8199;</td>
-                        <td id="rc22">&#8199;</td>
-                        <td id="rc23">&#8199;</td>
-                        <td id="rc24">&#8199;</td>
-                        <td id="rc25">&#8199;</td>
-                        <td id="rc26">&#8199;</td>
-                        <td id="rc20">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rc31">&#8199;</td>
-                        <td id="rc32">&#8199;</td>
-                        <td id="rc33">&#8199;</td>
-                        <td id="rc34">&#8199;</td>
-                        <td id="rc35">&#8199;</td>
-                        <td id="rc36">&#8199;</td>
-                        <td id="rc30">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rc41">&#8199;</td>
-                        <td id="rc42">&#8199;</td>
-                        <td id="rc43">&#8199;</td>
-                        <td id="rc44">&#8199;</td>
-                        <td id="rc45">&#8199;</td>
-                        <td id="rc46">&#8199;</td>
-                        <td id="rc40">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rc51">&#8199;</td>
-                        <td id="rc52">&#8199;</td>
-                        <td id="rc53">&#8199;</td>
-                        <td id="rc54">&#8199;</td>
-                        <td id="rc55">&#8199;</td>
-                        <td id="rc56">&#8199;</td>
-                        <td id="rc50">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rc61">&#8199;</td>
-                        <td id="rc62">&#8199;</td>
-                        <td id="rc63">&#8199;</td>
-                        <td id="rc64">&#8199;</td>
-                        <td id="rc65">&#8199;</td>
-                        <td id="rc66">&#8199;</td>
-                        <td id="rc60">&#8199;</td>
-                    </tr>
-                </table>
+                <table id = "cal_1"></table>
             </div>
         </div>
 
@@ -258,80 +192,13 @@
             </p>
 
             <div class="task none last">
-                <table>
-                    <tr>
-                        <th colspan="7" id="name_month_n"></th>
-                    </tr>
-                    <tr>
-                        <th>пн</th>
-                        <th>вт</th>
-                        <th>ср</th>
-                        <th>чт</th>
-                        <th>пт</th>
-                        <th>сб</th>
-                        <th>вс</th>
-                    </tr>
-                    <tr>
-                        <td id="rcn11">&#8199;</td>
-                        <td id="rcn12">&#8199;</td>
-                        <td id="rcn13">&#8199;</td>
-                        <td id="rcn14">&#8199;</td>
-                        <td id="rcn15">&#8199;</td>
-                        <td id="rcn16">&#8199;</td>
-                        <td id="rcn10">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rcn21">&#8199;</td>
-                        <td id="rcn22">&#8199;</td>
-                        <td id="rcn23">&#8199;</td>
-                        <td id="rcn24">&#8199;</td>
-                        <td id="rcn25">&#8199;</td>
-                        <td id="rcn26">&#8199;</td>
-                        <td id="rcn20">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rcn31">&#8199;</td>
-                        <td id="rcn32">&#8199;</td>
-                        <td id="rcn33">&#8199;</td>
-                        <td id="rcn34">&#8199;</td>
-                        <td id="rcn35">&#8199;</td>
-                        <td id="rcn36">&#8199;</td>
-                        <td id="rcn30">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rcn41">&#8199;</td>
-                        <td id="rcn42">&#8199;</td>
-                        <td id="rcn43">&#8199;</td>
-                        <td id="rcn44">&#8199;</td>
-                        <td id="rcn45">&#8199;</td>
-                        <td id="rcn46">&#8199;</td>
-                        <td id="rcn40">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rcn51">&#8199;</td>
-                        <td id="rcn52">&#8199;</td>
-                        <td id="rcn53">&#8199;</td>
-                        <td id="rcn54">&#8199;</td>
-                        <td id="rcn55">&#8199;</td>
-                        <td id="rcn56">&#8199;</td>
-                        <td id="rcn50">&#8199;</td>
-                    </tr>
-                    <tr>
-                        <td id="rcn61">&#8199;</td>
-                        <td id="rcn62">&#8199;</td>
-                        <td id="rcn63">&#8199;</td>
-                        <td id="rcn64">&#8199;</td>
-                        <td id="rcn65">&#8199;</td>
-                        <td id="rcn66">&#8199;</td>
-                        <td id="rcn60">&#8199;</td>
-                    </tr>
-                </table>
+                <table id = "cal_2"></table>
             </div>
 
             <form class="center last">
-                <input type="button" value="Предыдущий год" onclick="Ex6_p()">
-                <input type="button" value="Текущий год" onclick="Ex6()">
-                <input type="button" value="Следующий год" onclick="Ex6_n()">
+                <input type="button" value="Предыдущий год" onclick="AddCalendar('cal_2', new Date().getFullYear() - 1);">
+                <input type="button" value="Текущий год" onclick="AddCalendar('cal_2', new Date().getFullYear());">
+                <input type="button" value="Следующий год" onclick="AddCalendar('cal_2', new Date().getFullYear() + 1);">
             </form>
         </div>
 
@@ -348,7 +215,7 @@
                 что данные отправлены.
             </p>
 
-            <form class="form" onsubmit="Er();return false" method="post">
+            <form onsubmit="Er();return false" method="post">
                 <h2>
                     Подписка на журналы и газеты
                 </h2>
