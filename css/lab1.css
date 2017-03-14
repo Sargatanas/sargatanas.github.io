@@ -57,7 +57,7 @@ p{
     font-family: "Times New Roman", Times, serif;
     text-align: center;
 }
-.task{
+.task {
     padding-left: 11%;
 }
 .lit{
@@ -118,7 +118,7 @@ p{
     margin-right: 7%;
     margin-left: 7%;
 }
-.head{
+.header_button {
     margin-top: 0;
     background-color: #EBEFEB;
     text-align: center;

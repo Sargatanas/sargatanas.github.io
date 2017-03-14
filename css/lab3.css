@@ -34,7 +34,7 @@ h1 {
 /*-----------------------------------КНОПКИ В ХЭДЕРЕ-----------------------------------*/
 
 /*область кнопок*/
-.head{
+.header_button {
     margin-top: 0;
     padding: 10px;
     background-color: #EBEFEB;
@@ -57,10 +57,10 @@ h1 {
 }
 
 /*нижние отступы у верхнего ряда кнопок*/
-.button[href="#1"],
-.button[href="#2"],
-.button[href="#3"],
-.button[href="#4"] {
+.button[href="#block_1"],
+.button[href="#block_2"],
+.button[href="#block_3"],
+.button[href="#block_4"] {
     margin-bottom: 5px;
 }
 
@@ -101,7 +101,7 @@ h2{
 }
 
 /*текстовый элемент блока*/
-.task {
+.text {
     margin: 0;
     padding: 0 25px;
     text-align: justify;
@@ -111,11 +111,11 @@ h2{
 }
 
 /*задание*/
-.line {
-    border-left: 4px solid #6CB27F;
+.task {
     margin-bottom: 20px;
     margin-left: 25px;
     padding-left: 20px;
+    border-left: 4px solid #6CB27F;
     font-style: normal;
 }
 
@@ -221,7 +221,7 @@ th {
     color: #b66c32;
 }
 
-/*ячейка с названием месяца и годом*/
+/*ячейка с днями недели*/
 .table-header {
     background-color: #F6AC60;
     color: white;
@@ -241,6 +241,7 @@ th {
     border: 2px solid #fcd1b6;
     border-radius: 10px;
     font-family: Arial, sans-serif;
+    transition-duration: 0.3s;
 }
 
 /*заголовок формы*/
@@ -274,7 +275,7 @@ th {
 #phone-field,
 #select-field,
 .marg {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
 }
 
 /*отступ поля "фамилия"*/
@@ -305,7 +306,7 @@ th {
 /*цвета подписей к полям*/
 label[for="male-field"],
 label[for="check-1"],
-#count3
+#output_3_day
 {
     color: black;
 }
@@ -321,7 +322,7 @@ label[for="check-1"],
 }
 
 /*выбор города*/
-#select-field {
+#city-field {
     width: 200px;
     height: 30px;
     margin-left: 112px;
@@ -382,20 +383,50 @@ option[name="sport"] {
 
 /*ошибки заполнения формы*/
 .error {
+    margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 165px;
     font-size: 15px;
     color: lightgrey;
     border: transparent;
 }
-#er6 {
-    margin-left: 0;
-    margin-top: 10px;
+#error_7_5 {
+    margin: 10px 0;
 }
 
 /*комментарий к обязательным полям*/
 #always {
+    margin: 10px 40px;
     font-size: 15px;
+    color: #22a94a;
+}
+
+/*подтверждение отправки данных*/
+#re-form {
+    display: none;
+    margin: 10px 40px;
+    border: 2px dotted lightgray;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: grey;
+}
+#re-form h2 {
+    font-size: 20px;
+}
+#re-form p,
+#re-form li {
+    margin: 10px 20px;
+    text-align: left;
+    font-size: 14px;
+}
+#re-form hr {
+    margin: 10px 20px;
+    border: 1px dashed lightgray;
+}
+#re-form .thanks {
+    text-align: center;
+    font-size: 20px;
 }
 
 

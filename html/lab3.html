@@ -25,25 +25,23 @@
         РЕШЕНИЕ ЗАДАЧ НА JAVASCRIPT
     </h1>
 
-    <div class="head" id="head">
-        <a class="button" href="#1">задание 1</a>
-        <a class="button" href="#2">задание 2</a>
-        <a class="button" href="#3">задание 3</a>
-        <a class="button" href="#4">задание 4</a>
-        <a class="button" href="#5">задание 5</a>
-        <a class="button" href="#6">задание 6</a>
+    <div class="header_button" id="head">
+        <a class="button" href="#block_1">задание 1</a>
+        <a class="button" href="#block_2">задание 2</a>
+        <a class="button" href="#block_3">задание 3</a>
+        <a class="button" href="#block_4">задание 4</a>
+        <a class="button" href="#block_5">задание 5</a>
+        <a class="button" href="#block_6">задание 6</a>
         <a class="button" href="#7">задание 7</a>
     </div>
 
     <div class="container">
-        <div class="block" id="1">
-
-
+        <div class="block" id="block_1">
             <h2>
                 Задание №1
             </h2>
 
-            <p class="task">
+            <p class="text">
                 Сгенерировать последовательность с помощью датчика случайных чисел и&#8199;обработать согласно варианту
                 задания.
                 <br>
@@ -52,43 +50,42 @@
 
             <br>
 
-            <p class="task line">
+            <p class="text task">
                 14.	Определить, сколько раз встречается минимальный элемент в&#8199;последовательности.
             </p>
 
-            <div>
-                <form>
-                    <div class="task">
-                        <label for="n1" class="none">
-                            Введите количество элементов в последовательности:
-                        </label>
-                    </div>
-                    <input type="number" id="n1">
-                    <input type="button" onclick="Ex1()" value="генерировать">
-                </form>
+            <form autocomplete="off">
+                <div class="text none">
+                    <label for="input_1" class="none">
+                        Введите количество элементов в последовательности:
+                    </label>
+                </div>
 
-                <p class="task none">
-                    Сгенерированная последовательность:
-                    <br>
-                    <span id="output1">&#8196;</span>
-                </p>
+                <input type="number" id="input_1">
+                <input type="button" id="button_1" value="генерировать">
+            </form>
 
-                <p class="task none">
-                    Минимальный элемент: <span id="min1">#</span>
-                </p>
+            <div class="text none">
+                Сгенерированная последовательность:
+                <br>
+                <span id="output_1_sequence">&#8196;</span>
+            </div>
 
-                <p class="task none last">
-                    Встречается <span id="count1">#</span> раз(а)
-                </p>
+            <div class="text none">
+                Минимальный элемент: <span id="output_1_min">#</span>
+            </div>
+
+            <div class="text none last">
+                Встречается <span id="output_1_count">#</span> раз(а)
             </div>
         </div>
 
-        <div class="block ex-2" id="2">
+        <div class="block" id="block_2">
             <h2>
                 Задание №2
             </h2>
 
-            <p class="task line">
+            <p class="text task">
                 14.	Дано натуральное число <i>n</i>. Найти и&#8199;вывести все числа в интервале
                 от&#8199;1&#8199;до&#8199;<i>n</i>&#8199;−&#8199;1, у&#8199;которых сумма всех цифр совпадает
                 с&#8199;суммой цифр данного числа.
@@ -99,61 +96,58 @@
                 Числа: 8, 17, 26, 35.
             </p>
 
-            <div>
-                <form>
-                    <div class="task">
-                        <label for="n2" class="none">Введите <i>n</i>:</label>
-                    </div>
-                    <input  type="number" id="n2">
-                    <input type="button" onclick="Ex2()" value="Вывести">
-                </form>
+            <form autocomplete="off">
+                <div class="text">
+                    <label for="input_2" class="none">Введите <i>n</i>:</label>
+                </div>
 
-                <p class="task none last">
-                    Числа, сумма цифр которых совпадает с <span id="count2">#</span>:
-                    <br>
-                    <span id="output2">&#8199;</span>
-                </p>
-            </div>
+                <input  type="number" id="input_2">
+                <input type="button" id="button_2" value="Вывести">
+            </form>
+
+            <p class="text none last">
+                Числа, сумма цифр которых совпадает с <span id="output_2_num">#</span>:
+                <br>
+                <span id="output_2_sequence">&#8199;</span>
+            </p>
         </div>
 
-        <div class="block ex-3" id="3">
+        <div class="block" id="block_3">
             <h2>
                 Задание №3
             </h2>
 
-            <p class="task line">
+            <p class="text task">
                 14.	Сколько дней прошло со дня Вашего рождения?
             </p>
 
-            <div>
-                <form>
-                    <div class="task">
-                        <label for="n3" class="none">Введите дату вашего рождения:</label>
-                    </div>
+            <form autocomplete="off">
+                <div class="text">
+                    <label for="input_3" class="none">Введите дату вашего рождения:</label>
+                </div>
 
-                    <input type="date" id="n3">
-                    <input type="button" onclick="Ex3()" value="Рассчитать">
-                </form>
+                <input type="date" id="input_3">
+                <input type="button" id="button_3" value="Рассчитать">
+            </form>
 
-                <p class="task none last">
-                    Со дня вашего рождения прошло <span id="output3">#</span> <span id="count3">дней</span>
-                </p>
-            </div>
+            <p class="text none last">
+                Со дня вашего рождения прошло <span id="output_3">#</span> <span id="output_3_day">дней</span>
+            </p>
         </div>
 
-        <div class="block ex-4" id="4">
+        <div class="block" id="block_4">
             <h2>
                 Задание №4
             </h2>
 
-            <p class="task line">
+            <p class="text task">
                 14.	При получении полем checkbox_1 (флажок) фокуса в строке состояния должно выводиться сообщение:
                 «Определитесь с выбором»
             </p>
 
-            <form class="task none last">
-                <input type="checkbox" id="checkbox_1" onfocus="Ex4_f()" onblur="Ex4_b()">
-                <label for="checkbox_1">Сделать выбор</label>
+            <form class="text none last">
+                <input type="checkbox" id="checkbox_4">
+                <label for="checkbox_4">Сделать выбор</label>
             </form>
 
             <div class="imitator">
@@ -162,43 +156,43 @@
             </div>
         </div>
 
-        <div class="block ex-5" id="5">
+        <div class="block" id="block_5">
             <h2>
                 Задание №5
             </h2>
 
-            <p class="task line">
+            <p class="text task">
                 14.	Написать скрипт, который каждый раз при загрузке страницы генерировал бы календарь на текущий месяц.
             </p>
 
-            <div class="task none last">
-                <table id = "cal_1"></table>
+            <div class="text none last">
+                <table id ="calendar_1"></table>
             </div>
         </div>
 
-        <div class="block ex-6" id="6">
+        <div class="block" id="block_6">
             <h2>
                 Задание №6
             </h2>
 
-            <p class="task">
+            <p class="text">
                 Дополнить календарь следующими возможностями:
             </p>
 
             <br>
 
-            <p class="task line">
+            <p class="text task">
                 14. Кнопки, позволяющие сформировать календарь на текущий месяц предыдущего/следующего года.
             </p>
 
-            <div class="task none last">
-                <table id = "cal_2"></table>
+            <div class="text none last">
+                <table id = "calendar_2"></table>
             </div>
 
             <form class="center last">
-                <input type="button" value="Предыдущий год" onclick="AddCalendar('cal_2', new Date().getFullYear() - 1);">
-                <input type="button" value="Текущий год" onclick="AddCalendar('cal_2', new Date().getFullYear());">
-                <input type="button" value="Следующий год" onclick="AddCalendar('cal_2', new Date().getFullYear() + 1);">
+                <input type="button" id="button_6_1" value="Предыдущий год">
+                <input type="button" id="button_6_2" value="Текущий год">
+                <input type="button" id="button_6_3" value="Следующий год">
             </form>
         </div>
 
@@ -207,7 +201,7 @@
                 Задание №7
             </h2>
 
-            <p class="task line">
+            <p class="text task">
                 Разработайте форму, заполняемую пользователем Internet, на произвольную тематику. При этом должны быть
                 использованы все виды элементов, которые могут присутствовать на форме. Разработайте скрипт, проверяющий
                 правильность заполнения полей формы (не пустые ли они, соответствуют ли типы и диапазоны данных и др.)
@@ -215,27 +209,31 @@
                 что данные отправлены.
             </p>
 
-            <form class="post" onsubmit="Er();return false" method="post">
+            <form class="post" onsubmit="error();return false">
                 <h2>
                     Подписка на журналы и газеты
                 </h2>
+
                 <div class="personal">
+                    <!--фамилия-->
                     <div>
                         <label for="surname-field">
                             Фамилия<span>*</span>
                         </label>
                         <input type="text" id="surname-field">
-                        <div class="error" id="er1"></div>
+                        <div class="error" id="error_7_1">&#8199;</div>
                     </div>
 
+                    <!--имя-->
                     <div>
                         <label for="name-field">
                             Имя<span>*</span>
                         </label>
                         <input type="text" id="name-field">
-                        <div class="error" id="er2"></div>
+                        <div class="error" id="error_7_2">&#8199;</div>
                     </div>
 
+                    <!--дата рождения-->
                     <div>
                         <label for="date-field">
                             Дата рождения
@@ -243,6 +241,7 @@
                         <input type="date" id="date-field">
                     </div>
 
+                    <!--пол-->
                     <div class="marg">
                         <div>
                             Пол
@@ -266,55 +265,59 @@
                 <hr>
 
                 <div class="contacts">
+                    <!--электронная почта-->
                     <div>
                         <label for='email-field'>
                             Электронная почта<span>*</span>
                         </label>
                         <input type="email" id="email-field">
-                        <div class="error" id="er3"></div>
+                        <div class="error" id="error_7_3">&#8199;</div>
                     </div>
 
+                    <!--телефон-->
                     <div>
                         <label for='phone-field'>
                             Мобильный телефон
                         </label>
                         <input type="tel" id="phone-field" pattern="8-9[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
-                        <div class="error" id="er4">8-9XX-XXX-XX-XX</div>
+                        <div class="error">8-9XX-XXX-XX-XX</div>
                     </div>
 
+                    <!--город-->
                     <div>
-                        <label for="select-field">
+                        <label for="city-field">
                             Город<span>*</span>
                         </label>
-                        <select id="select-field">
+                        <select id="city-field">
                             <option id="select">-выберите город-</option>
                             <option id="Moscow">Москва</option>
                             <option id="Piter">Санкт-Петербург</option>
                             <option id="Perm">Пермь</option>
                             <option id="Ekat">Екатеринбург</option>
                         </select>
-                        <div class="error" id="er5"></div>
+                        <div class="error" id="error_7_4">&#8199;</div>
                     </div>
                 </div>
 
                 <hr>
 
                 <div class="interests">
+                    <!--интересы-->
                     <div>
                         <p>
                             Интересы
-
                             <span>
-                                <input type="checkbox" id="check-1" name="checkbox-field">
+                                <input type="checkbox" id="check-1" name="checkbox-field" data-attribute="science">
                             <label for="check-1">Наука</label>
                             </span>
                         </p>
+
                         <div>
-                            <input type="checkbox" id="check-2" name="checkbox-field">
+                            <input type="checkbox" id="check-2" name="checkbox-field" data-attribute="creation">
                             <label for="check-2">Творчество</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="check-3" name="checkbox-field">
+                            <input type="checkbox" id="check-3" name="checkbox-field" data-attribute="sport">
                             <label for="check-3">Спорт</label>
                         </div>
                         <div>
@@ -324,6 +327,7 @@
                         </div>
                     </div>
 
+                    <!--публикации-->
                     <div>
                         <p class="piblic">
                             Публикации<span>*</span>
@@ -379,23 +383,26 @@
                                 Автомотоспорт
                             </option>
                         </select>
-                        <div class="error" id="er6"></div>
+                        <div class="error" id="error_7_5">&#8199;</div>
                     </div>
-
-                    <span id="always">
-                    * обязательные поля для заполнения
-                    </span>
                 </div>
 
+                <div id="always">
+                    * обязательные поля для заполнения
+                </div>
+
+                <!--кнопки-->
                 <div class="center last">
-                    <input type="submit" value="Отправить" >
+                    <input type="submit" value="Отправить">
                     <input type="reset" value="Сброс">
                 </div>
-
             </form>
+
+            <div id="re-form">
+                Ваши данные успешно переданы!
+            </div>
         </div>
     </div>
-
 
 </div>
 
