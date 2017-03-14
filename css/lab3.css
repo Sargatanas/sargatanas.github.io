@@ -236,7 +236,7 @@ th {
 /*-----------------------------------ФОРМА-----------------------------------*/
 
 /*область формы*/
-form {
+.post {
     margin: 40px;
     border: 2px solid #fcd1b6;
     border-radius: 10px;
@@ -244,7 +244,7 @@ form {
 }
 
 /*заголовок формы*/
-form h2 {
+.post h2 {
     width: 350px;
     margin: -20px auto auto;
     background: white;
@@ -254,7 +254,7 @@ form h2 {
 }
 
 /*разделители в форме*/
-form hr {
+.post hr {
      border: 1px dotted #fcd1b6;
      margin: 0 10px;
  }
