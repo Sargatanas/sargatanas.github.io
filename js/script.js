@@ -92,7 +92,7 @@ function taskThree()
     dif_date = Math.floor(dif_date/1000/60/60/24);
 
     //выведем результат
-    if (!data.valid) {
+    if (data == 'Invalid Date') {
         dif_date = 0;
     }
     document.getElementById('output_3').innerHTML = String(dif_date);
