@@ -1,26 +1,20 @@
+
+/*-----------------------------------БАЗОВЫЕ ЭЛЕМЕНТЫ-----------------------------------*/
 body {
     background: url(img/background.png) #000000;
 }
 h1 {
-    background-color: #6CB27F;
-    color: #FFFFFF;
-    text-align: center;
+    margin-bottom: 0;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: #6CB27F;
+    text-align: center;
     font-size: 32px;
-    margin-bottom: 0;
+    color: #FFFFFF;
 }
 h2{
+    text-align: center;
     color: #364A36;
-    text-align: center;
-}
-.stripe {
-    background-color: #A0CAAB;
-    color: #FFFFFF;
-    text-align: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-size: 28px;
 }
 ol,
 ul {
@@ -32,14 +26,14 @@ li {
     text-align: justify;
 }
 pre {
-    background-color: #EBEFEB;
-    font-family: "Courier New", Courier, monospace;
+    margin-left: 7%;
+    margin-right: 7%;
     padding-top: 20px;
     padding-right: 3%;
     padding-left: 3%;
+    background-color: #EBEFEB;
+    font-family: "Courier New", Courier, monospace;
     font-size: 0.85em;
-    margin-left: 7%;
-    margin-right: 7%;
 }
 p{
     padding-right: 7%;
@@ -48,28 +42,105 @@ p{
     text-indent: 30px;
     line-height: 1.3;
 }
+
+
+/*-----------------------------------КНОПКИ-----------------------------------*/
+
+/*область кнопок*/
+.header_button {
+    margin-top: 0;
+    padding: 10px;
+    background-color: #EBEFEB;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*кнопки*/
+.button{
+    display: inline-block;
+    width: 180px;
+    padding: 5px;
+    vertical-align: middle;
+    background-color: #A0CAAB;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+.button:hover{
+    background-color: #F6AC60;
+}
+
+
+/*-----------------------------------ПОЛЬЗОВАТЕЛЬСКИЕ ЭЛЕМЕНТЫ-----------------------------------*/
+
+/*заголовок полосой*/
+.stripe {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #A0CAAB;
+    text-align: center;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+
+/*оформление кодовых элементов в тексте*/
 .cod {
     font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
     font-size: 17px;
+    font-weight: bold;
 }
+
+/*формулы в тексте*/
 .formula{
-    font-family: "Times New Roman", Times, serif;
     text-align: center;
+    font-family: "Times New Roman", Times, serif;
 }
+
+/*список с заданиями*/
 .task {
     padding-left: 11%;
 }
+
+/*список литературы*/
 .lit{
-    font-size: 14px;
     padding-bottom: 10px;
+    font-size: 14px;
 }
+
+/*разделительные линии*/
+.hr1{
+    border: 3px double #D7E5D7;
+    margin-right: 7%;
+    margin-left: 7%;
+}
+.hr2{
+    border: 2px dotted #D7E5D7;
+    margin-right: 7%;
+    margin-left: 7%;
+}
+
+/*выравнивание элементов*/
+.image {
+    text-align: center;
+}
+.video {
+    text-align: center;
+}
+
+
+/*-----------------------------------ФУТЕР-----------------------------------*/
+
+/*область футера*/
 .footer{
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #3F5A3F;
 }
+
+/*надпись "Читать текже"*/
 .also {
     align-self: flex-start;
     color: #8BA28B;
@@ -78,14 +149,8 @@ p{
     padding-top: 5px;
     padding-bottom: 20px;
 }
-.auth{
-    align-self: flex-end;
-    margin-left: 7%;
-    margin-right: 5%;
-    color: #FFFFFF;
-    text-align: right;
-    font-size: 12px;
-}
+
+/*область ссылок*/
 .href {
     flex-basis: 400px;
     justify-content: flex-start;
@@ -99,6 +164,8 @@ p{
 .href a:hover {
     color: white;
 }
+
+/*ссылки*/
 .hrefs {
     margin-bottom: 5px;
     padding: 5px;
@@ -108,41 +175,20 @@ p{
     text-decoration: none;
     border-radius: 4px;
 }
-.hr1{
-    border: 3px double #D7E5D7;
-    margin-right: 7%;
+
+/*автор*/
+.auth{
+    align-self: flex-end;
     margin-left: 7%;
-}
-.hr2{
-    border: 2px dotted #D7E5D7;
-    margin-right: 7%;
-    margin-left: 7%;
-}
-.header_button {
-    margin-top: 0;
-    background-color: #EBEFEB;
-    text-align: center;
-    font-size: 20px;
-    padding: 10px;
-}
-.button{
-    vertical-align: middle;
-    padding: 5px;
-    background-color: #A0CAAB;
+    margin-right: 5%;
     color: #FFFFFF;
-    text-decoration: none;
-    width: 180px;
-    display: inline-block;
-    font-size: 18px;
-    text-transform: uppercase;
+    text-align: right;
+    font-size: 12px;
 }
-.button:hover{
-    background-color: #F6AC60;
-    transition: 0.2s;
-}
-.image {
-    text-align: center;
-}
+
+
+/*-----------------------------------ТАБЛИЦА-----------------------------------*/
+
 table {
     margin: auto;
     border-collapse: collapse;
@@ -162,11 +208,12 @@ caption {
     padding-top: 10px;
     color: #757575;
 }
-.video {
-    text-align: center;
-}
 
-#mult a::before{
+
+/*-----------------------------------КНОПКА ВВЕРХ-----------------------------------*/
+
+/*кнопка*/
+#up::before {
     content: '';
     display: block;
     position: fixed;
@@ -174,15 +221,16 @@ caption {
     bottom: 0;
     width: 50px;
     height: 50px;
+    background: #A0CAAB;
     border-radius: 50%;
     transform:
             translateX(527px)
             translateY(-20px);
-    background: #A0CAAB;
     opacity: 0.5;
 }
 
-#mult a::after{
+/*стрелка на кнопке*/
+#up::after {
     content: '';
     display: block;
     position: fixed;
@@ -190,27 +238,34 @@ caption {
     bottom: 0;
     width: 36px;
     height: 36px;
+    background: url('img/arrow-top.svg') no-repeat;
     transform:
             translateX(520px)
             translateY(-22px);
-    background: url('img/arrow-top.svg') no-repeat;
     opacity: 0.3;
 }
 
-#mult a::before,
-#mult a::after {
+/*длительность изменения*/
+#up::before,
+#up::after {
     transition-duration: 0.3s;
 }
 
-#mult a:hover::before {
+/*наведение на кнопку*/
+#up:hover::before {
     background: #F6AC60;
     opacity: 1;
 }
 
-#mult a:hover::after {
+/*наведение на кнопку - стрелка*/
+#up:hover::after {
     opacity: 1;
 }
 
+
+/*-----------------------------------КНОПКА НАЗАД----------------------------------*/
+
+/*кнопка*/
 #back-field {
     display: block;
     position: fixed;
@@ -218,8 +273,8 @@ caption {
     top: 0;
     width: 50px;
     height: 50px;
-    border-radius: 25px;
     background: #A0CAAB;
+    border-radius: 25px;
     transform:
             translateX(-534px)
             translateY(22px);
@@ -227,6 +282,7 @@ caption {
     transition-duration: 0.3s;
 }
 
+/*стрелка на кнопке*/
 #back {
     display: block;
     position: fixed;
@@ -242,6 +298,7 @@ caption {
     transition-duration: 0.3s;
 }
 
+/*надпись на кнопке*/
 #text {
     display: block;
     position: fixed;
@@ -256,6 +313,7 @@ caption {
     transition-duration: 0.3s;
 }
 
+/*наведение на кнопку*/
 #pos:hover #back-field {
     width: 140px;
     background: #F6AC60;
@@ -265,6 +323,7 @@ caption {
     opacity: 1;
 }
 
+/*наведение на кнопку - стрелка*/
 #pos:hover #back {
     transform:
             translateX(-613px)
@@ -272,6 +331,7 @@ caption {
     opacity: 1;
 }
 
+/*наведение на кнопку - текст*/
 #pos:hover #text {
     width: 100%;
     transform:
