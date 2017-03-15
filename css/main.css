@@ -12,12 +12,13 @@ body, html {
 
 .area-small {
     width: 800px;
-    height: 500px;
+    min-height: 600px;
     background-color: white;
     border-radius: 8px;
 }
 
 .href {
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
 }
