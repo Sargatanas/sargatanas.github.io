@@ -50,7 +50,7 @@
                 Так как цвет текста слабо заметен, параметр "цвет текста" при решении задачи изменен на "цвет ячейки"
             </p>
 
-            <?php require_once($_SERVER['DOCUMENT_ROOT'].'/php/task1.php'); ?>
+            <?php require_once($_SERVER['DOCUMENT_ROOT'].'/web/php/task1.php'); ?>
         </div>
 
         <div class="block" id="block_2">
@@ -64,7 +64,7 @@
                 троечников и двоечников.
             </p>
 
-            <?php require_once($_SERVER['DOCUMENT_ROOT'].'/php/task2.php'); ?>
+            <?php require_once($_SERVER['DOCUMENT_ROOT'].'/web/php/task2.php'); ?>
         </div>
     </div>
 
