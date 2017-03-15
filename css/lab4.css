@@ -1,0 +1,148 @@
+/*-----------------------------------ОСНОВНЫЕ-----------------------------------*/
+
+/*фон страницы*/
+body {
+    background: url("img/background.png") #000000;
+}
+
+/*область содержимого*/
+body > div {
+    width: 900px;
+    margin: auto;
+    padding-bottom: 30px;
+    background: #FFFFFF;
+}
+
+/*предзаголовок*/
+.header {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*заголовки*/
+h1 {
+    margin-bottom: 0;
+    padding: 10px 0;
+    background: #6CB27F;
+    text-align: center;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+h2 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #A0CAAB;
+    text-align: center;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+
+
+/*-----------------------------------КОНТЕЙНЕРЫ С ЗАДАНИЯМИ-----------------------------------*/
+
+/*текстовый элемент блока*/
+.text {
+    margin: 20px;
+    padding: 0 25px;
+    text-align: justify;
+    line-height: 1.3;
+    font-size: 20px;
+}
+
+/*выравнивание текста по центру*/
+.center {
+    text-align: center;
+}
+
+/*формулы*/
+.formula {
+    display: block;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+}
+
+/*код*/
+.cod {
+    padding: 20px;
+    background: #EBEFEB;
+}
+
+/*-----------------------------------КНОПКА НАЗАД----------------------------------*/
+
+/*кнопка*/
+#back-field {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: #A0CAAB;
+    border-radius: 25px;
+    transform:
+            translateX(-534px)
+            translateY(22px);
+    opacity: 0.5;
+    transition-duration: 0.3s;
+}
+
+/*стрелка на кнопке*/
+#back {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: url('img/arrow-left.svg') no-repeat;
+    transform:
+            translateX(-523px)
+            translateY(29px);
+    opacity: 0.3;
+    transition-duration: 0.3s;
+}
+
+/*надпись на кнопке*/
+#text {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: transparent;
+    transform:
+            translateX(-520px)
+            translateY(37px);
+    transition-duration: 0.3s;
+}
+
+/*наведение на кнопку*/
+#pos:hover #back-field {
+    width: 140px;
+    background: #F6AC60;
+    transform:
+            translateX(-624px)
+            translateY(22px);
+    opacity: 1;
+}
+
+/*наведение на кнопку - стрелка*/
+#pos:hover #back {
+    transform:
+            translateX(-613px)
+            translateY(29px);
+    opacity: 1;
+}
+
+/*наведение на кнопку - текст*/
+#pos:hover #text {
+    width: 100%;
+    transform:
+            translateX(-570px)
+            translateY(37px);
+    color: white;
+}
