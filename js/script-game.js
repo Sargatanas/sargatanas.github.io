@@ -43,12 +43,12 @@ function Fox() {
 }
 
 function Run() {
-    document.getElementById('img').style.background = 'url("img/lisa.gif") no-repeat';
+    document.getElementById('img').style.background = 'url("../css/img/lisa.gif") no-repeat';
     document.getElementById('img').style.backgroundSize = '150px 138px';
 }
 
 function Stop() {
-    document.getElementById('img').style.background = 'url("img/lisa.png") no-repeat';
+    document.getElementById('img').style.background = 'url("../css/img/lisa.png") no-repeat';
     document.getElementById('img').style.backgroundSize = '150px 138px';
 
 }

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №5</title>
+    <link href="../css/lab5.css" rel="stylesheet">
+</head>
+<body>
+<div>
+
+    <!--[if !IE]><!-->
+    <a href="../index.html" id="pos">
+        <span id="back-field"></span>
+        <span id="back"></span>
+        <div id="text">НАЗАД</div>
+    </a>
+    <a href="#head" title="Вверх" id="up"></a>
+    <!-- <![endif]-->
+
+    <div class="header">
+        Лабораторная работа №5
+    </div>
+
+    <h1>
+        ПРОГРАММИРОВАНИЕ НА PHP
+    </h1>
+
+    <div class="header_button" id="head">
+        <a class="button" href="#block_1">задание 1</a>
+        <a class="button" href="#block_2">задание 2</a>
+        <a class="button" href="#block_3">задание 3</a>
+        <br>
+        <a class="button" href="#block_4">задание 4</a>
+        <a class="button" href="#block_5">задание 5</a>
+        <a class="button" href="#block_6">задание 6</a>
+    </div>
+
+    <div class="container">
+        <div class="block" id="block_1">
+            <h2>
+                Задание №1
+            </h2>
+
+            <p class="text">
+                Сгенерировать последовательность с помощью датчика случайных чисел и&#8199;обработать согласно варианту
+                задания.
+                <br>
+                Массивы при выполнении этого задания не используются!
+            </p>
+
+            <br>
+
+            <p class="text task">
+                14.	Определить, сколько раз встречается минимальный элемент в&#8199;последовательности.
+            </p>
+
+            <form autocomplete="off">
+                <div class="text none">
+                    <label for="input_1" class="none">
+                        Введите количество элементов в последовательности:
+                    </label>
+                </div>
+
+                <input type="number" id="input_1">
+                <input type="button" id="button_1" value="генерировать">
+            </form>
+
+            <div class="text none">
+                Сгенерированная последовательность:
+                <br>
+                <span id="output_1_sequence">&#8196;</span>
+            </div>
+
+            <div class="text none">
+                Минимальный элемент: <span id="output_1_min">#</span>
+            </div>
+
+            <div class="text none last">
+                Встречается <span id="output_1_count">#</span> раз(а)
+            </div>
+        </div>
+
+        <div class="block" id="block_2">
+            <h2>
+                Задание №2
+            </h2>
+
+            <p class="text task">
+                14.	Дано натуральное число <i>n</i>. Найти и&#8199;вывести все числа в интервале
+                от&#8199;1&#8199;до&#8199;<i>n</i>&#8199;−&#8199;1, у&#8199;которых сумма всех цифр совпадает
+                с&#8199;суммой цифр данного числа.
+                Если таких чисел нет, то&#8199;вывести слово "нет".
+                <br>
+                Пример: <i>n</i> = 44.
+                <br>
+                Числа: 8, 17, 26, 35.
+            </p>
+
+            <form autocomplete="off">
+                <div class="text">
+                    <label for="input_2" class="none">Введите <i>n</i>:</label>
+                </div>
+
+                <input  type="number" id="input_2">
+                <input type="button" id="button_2" value="Вывести">
+            </form>
+
+            <p class="text none last">
+                Числа, сумма цифр которых совпадает с <span id="output_2_num">#</span>:
+                <br>
+                <span id="output_2_sequence">&#8199;</span>
+            </p>
+        </div>
+
+        <div class="block" id="block_3">
+            <h2>
+                Задание №3
+            </h2>
+
+            <p class="text task">
+                14.	Сколько дней прошло со дня Вашего рождения?
+            </p>
+
+            <form autocomplete="off">
+                <div class="text">
+                    <label for="input_3" class="none">Введите дату вашего рождения:</label>
+                </div>
+
+                <input type="date" id="input_3">
+                <input type="button" id="button_3" value="Рассчитать">
+            </form>
+
+            <p class="text none last">
+                Со дня вашего рождения прошло <span id="output_3">#</span> <span id="output_3_day">дней</span>
+            </p>
+        </div>
+
+        <div class="block" id="block_4">
+            <h2>
+                Задание №4
+            </h2>
+
+            <p class="text task">
+                14.	При получении полем checkbox_1 (флажок) фокуса в строке состояния должно выводиться сообщение:
+                «Определитесь с выбором»
+            </p>
+
+            <form class="text none last">
+                <input type="checkbox" id="checkbox_4">
+                <label for="checkbox_4">Сделать выбор</label>
+            </form>
+
+            <div class="imitator">
+                <div id="top"></div>
+                <span id="status_bar">&#8199;</span>
+            </div>
+        </div>
+
+        <div class="block" id="block_5">
+            <h2>
+                Задание №5
+            </h2>
+
+            <p class="text task">
+                14.	Написать скрипт, который каждый раз при загрузке страницы генерировал бы календарь на текущий месяц.
+            </p>
+
+            <div class="text none last">
+                <table id ="calendar_1"></table>
+            </div>
+        </div>
+
+        <div class="block" id="block_6">
+            <h2>
+                Задание №6
+            </h2>
+
+            <p class="text">
+                Дополнить календарь следующими возможностями:
+            </p>
+
+            <br>
+
+            <p class="text task">
+                14. Кнопки, позволяющие сформировать календарь на текущий месяц предыдущего/следующего года.
+            </p>
+
+            <div class="text none last">
+                <table id = "calendar_2"></table>
+            </div>
+
+            <form class="center last">
+                <input type="button" id="button_6_1" value="Предыдущий год">
+                <input type="button" id="button_6_2" value="Текущий год">
+                <input type="button" id="button_6_3" value="Следующий год">
+            </form>
+        </div>
+
+        <div class="block ex-7" id="block_7">
+            <h2>
+                Задание №7
+            </h2>
+
+            <p class="text task">
+                Разработайте форму, заполняемую пользователем Internet, на произвольную тематику. При этом должны быть
+                использованы все виды элементов, которые могут присутствовать на форме. Разработайте скрипт, проверяющий
+                правильность заполнения полей формы (не пустые ли они, соответствуют ли типы и диапазоны данных и др.)
+                При неправильном заполнении сообщить, какие поля надо исправить. Если всё заполнено верно, сообщить,
+                что данные отправлены.
+            </p>
+
+            <form class="post" onsubmit="error();return false">
+                <h2>
+                    Подписка на журналы и газеты
+                </h2>
+
+                <div class="personal">
+                    <!--фамилия-->
+                    <div>
+                        <label for="surname-field">
+                            Фамилия<span>*</span>
+                        </label>
+                        <input type="text" id="surname-field">
+                        <div class="error" id="error_7_1">&#8199;</div>
+                    </div>
+
+                    <!--имя-->
+                    <div>
+                        <label for="name-field">
+                            Имя<span>*</span>
+                        </label>
+                        <input type="text" id="name-field">
+                        <div class="error" id="error_7_2">&#8199;</div>
+                    </div>
+
+                    <!--дата рождения-->
+                    <div>
+                        <label for="date-field">
+                            Дата рождения
+                        </label>
+                        <input type="date" id="date-field">
+                    </div>
+
+                    <!--пол-->
+                    <div class="marg">
+                        <div>
+                            Пол
+                            <span id="sex1">
+                                <input type="radio" id="male-field" name="sex-field" value="male">
+                                <label for="male-field">
+                                    мужской
+                                </label>
+                            </span>
+                        </div>
+
+                        <div id="sex2">
+                            <input type="radio" id="women-field" name="sex-field" value="women">
+                            <label for="women-field">
+                                женский
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="contacts">
+                    <!--электронная почта-->
+                    <div>
+                        <label for='email-field'>
+                            Электронная почта<span>*</span>
+                        </label>
+                        <input type="email" id="email-field">
+                        <div class="error" id="error_7_3">&#8199;</div>
+                    </div>
+
+                    <!--телефон-->
+                    <div>
+                        <label for='phone-field'>
+                            Мобильный телефон
+                        </label>
+                        <input type="tel" id="phone-field" pattern="8-9[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                        <div class="error">8-9XX-XXX-XX-XX</div>
+                    </div>
+
+                    <!--город-->
+                    <div>
+                        <label for="city-field">
+                            Город<span>*</span>
+                        </label>
+                        <select id="city-field">
+                            <option id="select">-выберите город-</option>
+                            <option id="Moscow">Москва</option>
+                            <option id="Piter">Санкт-Петербург</option>
+                            <option id="Perm">Пермь</option>
+                            <option id="Ekat">Екатеринбург</option>
+                        </select>
+                        <div class="error" id="error_7_4">&#8199;</div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="interests">
+                    <!--интересы-->
+                    <div>
+                        <p>
+                            Интересы
+                            <span>
+                                <input type="checkbox" id="check-1" name="checkbox-field" data-attribute="science">
+                            <label for="check-1">Наука</label>
+                            </span>
+                        </p>
+
+                        <div>
+                            <input type="checkbox" id="check-2" name="checkbox-field" data-attribute="creation">
+                            <label for="check-2">Творчество</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="check-3" name="checkbox-field" data-attribute="sport">
+                            <label for="check-3">Спорт</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="check-4" name="checkbox-field">
+                            <label for="check-4">Другое</label>
+                            <textarea id="other-field" rows="1" cols="100">Укажите свои интересы</textarea>
+                        </div>
+                    </div>
+
+                    <!--публикации-->
+                    <div>
+                        <p class="piblic">
+                            Публикации<span>*</span>
+                        </p>
+
+                        <select multiple size="5" id="selector">
+                            <option name="common" class="options">
+                                Квант
+                            </option>
+                            <option name="common" class="options">
+                                Математическое просвещение
+                            </option>
+                            <option name="common" class="options">
+                                Соросовский образовательный журнал
+                            </option>
+
+                            <option name="science" class="options">
+                                Наука и жизнь
+                            </option>
+                            <option name="science" class="options">
+                                Азиатский вестник
+                            </option>
+                            <option name="science" class="options">
+                                Русский антропологический журнал
+                            </option>
+                            <option name="science" class="options">
+                                Журнал технической физики
+                            </option>
+
+                            <option name="creation" class="options">
+                                Иностранная литература
+                            </option>
+                            <option name="creation" class="options">
+                                Театр
+                            </option>
+                            <option name="creation" class="options">
+                                Русская музыкальная газета
+                            </option>
+                            <option name="creation" class="options">
+                                Fuzz
+                            </option>
+
+                            <option name="sport" class="options">
+                                Большой спорт
+                            </option>
+                            <option name="sport" class="options">
+                                PROспорт
+                            </option>
+                            <option name="sport" class="options">
+                                Dive Tek
+                            </option>
+                            <option name="sport" class="options">
+                                Автомотоспорт
+                            </option>
+                        </select>
+                        <div class="error" id="error_7_5">&#8199;</div>
+                    </div>
+                </div>
+
+                <div id="always">
+                    * обязательные поля для заполнения
+                </div>
+
+                <!--кнопки-->
+                <div class="center last">
+                    <input type="submit" value="Отправить">
+                    <input type="reset" id="reset" value="Сброс">
+                </div>
+            </form>
+
+            <div id="re-form">
+                Ваши данные успешно переданы!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

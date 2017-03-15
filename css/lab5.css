@@ -1,0 +1,563 @@
+/*-----------------------------------ОСНОВНЫЕ-----------------------------------*/
+
+/*фон страницы*/
+body {
+    background: url("img/background.png") #000000;
+}
+
+/*область содержимого*/
+body > div {
+    width: 900px;
+    margin: auto;
+    background: #FFFFFF;
+}
+
+/*предзаголовок*/
+.header {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*основной заголовок*/
+h1 {
+    margin-bottom: 0;
+    padding: 10px 0;
+    background: #6CB27F;
+    text-align: center;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+
+/*-----------------------------------КНОПКИ В ХЭДЕРЕ-----------------------------------*/
+
+/*область кнопок*/
+.header_button {
+    margin-top: 0;
+    padding: 10px;
+    background-color: #EBEFEB;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*кнопка*/
+.button{
+    display: inline-block;
+    width: 200px;
+    padding: 5px;
+    vertical-align: middle;
+    background-color: #A0CAAB;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition-duration: 0.3s;
+}
+
+/*отступы у кнопок*/
+.button[href="#block_1"],
+.button[href="#block_2"],
+.button[href="#block_3"] {
+    margin-bottom: 5px;
+}
+.button[href="#block_4"] {
+    margin-left: -5px;
+}
+
+/*наведение на кнопку*/
+.button:hover{
+    background-color: #F6AC60;
+}
+
+
+/*-----------------------------------КОНТЕЙНЕРЫ С ЗАДАНИЯМИ-----------------------------------*/
+
+/*область контейнеров*/
+.container {
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-bottom: 10px;
+    padding-bottom: 40px;
+}
+
+/*контейнер*/
+.block {
+    margin-top: 20px;
+    border: 2px solid #EBEFEB;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/*заголовки контейнеров*/
+h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    background: #EBEFEB;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+    text-align: center;
+    font-size: 26px;
+}
+
+/*текстовый элемент блока*/
+.text {
+    margin: 0;
+    padding: 0 25px;
+    text-align: justify;
+    line-height: 1.3;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/*задание*/
+.task {
+    margin-bottom: 20px;
+    margin-left: 25px;
+    padding-left: 20px;
+    border-left: 4px solid #6CB27F;
+    font-style: normal;
+}
+
+/*некурсивое начертание текстового элемента*/
+.none {
+    margin-top: 10px;
+    font-style: normal;
+}
+
+/*последний элемент в блоке*/
+.last {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*-----------------------------------ПОЛЯ И КНОПКИ-----------------------------------*/
+
+/*поля ввода*/
+input[type="number"],
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"] {
+    height: 25px;
+    min-width: 300px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 25px;
+    padding-left: 10px;
+    border: 1px solid gray;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+}
+
+/*кнопки ввода*/
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    height: 30px;
+    min-width: 150px;
+    background: #F6AC60;
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/*наведение на кнопки ввода*/
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: #FCC083;
+    cursor: pointer;
+}
+
+/*выравнивание кнопок по центру*/
+.center {
+    text-align: center;
+}
+
+/*заполняемые области*/
+span {
+    color: #22a94a;
+}
+
+/*имитация строки состояния*/
+.imitator {
+    width: 100%;
+    min-height: 30px;
+    background: #EBEFEB;
+}
+#status_bar {
+    padding-left: 20px;
+    font-size: 15px;
+}
+#top {
+    height: 6px;
+}
+
+
+/*-----------------------------------КАЛЕНДАРЬ-----------------------------------*/
+
+/*таблица*/
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+/*ячейки таблицы*/
+th,
+td {
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid #ca8549;
+}
+
+/*ячейки шапки таблицы*/
+th {
+    background-color: #fff6ed;
+    color: #b66c32;
+}
+
+/*ячейка с днями недели*/
+.table-header {
+    background-color: #F6AC60;
+    color: white;
+}
+
+/*текущаая дата*/
+.cur_date {
+    background-color: rgba(255, 228, 179, 0.51);
+}
+
+
+/*-----------------------------------ФОРМА-----------------------------------*/
+
+/*область формы*/
+.post {
+    margin: 40px;
+    border: 2px solid #fcd1b6;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    transition-duration: 0.3s;
+}
+
+/*заголовок формы*/
+.post h2 {
+    width: 350px;
+    margin: -20px auto auto;
+    background: white;
+    border-radius: 0;
+    font-size: 20px;
+    color: #b66c32;
+}
+
+/*разделители в форме*/
+.post hr {
+     border: 1px dotted #fcd1b6;
+     margin: 0 10px;
+ }
+
+/*тематические блоки*/
+.personal,
+.contacts,
+.interests {
+    margin: 20px 40px;
+}
+
+/*отступы полей ввода сверху и снизу*/
+#surname-field,
+#name-field,
+#date-field,
+#email-field,
+#phone-field,
+#select-field,
+.marg {
+    margin: 10px 0 0 0;
+}
+
+/*отступ поля "фамилия"*/
+#surname-field {
+    margin-left: 89px;
+}
+
+/*отступ поля "имя"*/
+#name-field {
+    margin-left: 125px;
+}
+
+/*отступ поля "дата рождения"*/
+#date-field {
+    margin-left: 48px;
+}
+
+/*отступ поля "пол - мужской"*/
+#sex1 {
+    margin-left: 128px;
+}
+
+/*отступ поля "пол - женский"*/
+#sex2 {
+    margin-left: 161px;
+}
+
+/*цвета подписей к полям*/
+label[for="male-field"],
+label[for="check-1"],
+#output_3_day
+{
+    color: black;
+}
+
+/*отступ поля "электронный адрес"*/
+#email-field {
+    margin-left: 12px;
+}
+
+/*отступ поля "телефон"*/
+#phone-field {
+    margin-left: 5px;
+}
+
+/*выбор города*/
+#city-field {
+    width: 200px;
+    height: 30px;
+    margin-left: 112px;
+    padding-left: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+/*отступы поля "выбор интересов"*/
+.interests input[type="checkbox"] {
+    margin: 5px;
+}
+.interests p {
+     margin-bottom: 0;
+ }
+
+/*отступы чекбоксов поля "выбор интересов"*/
+#check-1 {
+    margin-left: 87px;
+}
+#check-2,
+#check-3,
+#check-4 {
+    margin-left: 165px;
+}
+
+/*поле ввода прочих интересов*/
+textarea {
+    max-width: 400px;
+    margin-left: 165px;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+/*мультиселект "выбор публикаций"*/
+select[multiple] {
+    margin-top: 10px;
+    width: 500px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+/*манипуляция пунктами мультиселекта*/
+#other-field
+{
+    display: none;
+}
+option[name="science"] {
+    display: none;
+}
+option[name="creation"]{
+    display: none;
+}
+option[name="sport"] {
+    display: none;
+}
+
+/*ошибки заполнения формы*/
+.error {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 165px;
+    font-size: 15px;
+    color: lightgrey;
+    border: transparent;
+}
+#error_7_5 {
+    margin: 10px 0;
+}
+
+/*комментарий к обязательным полям*/
+#always {
+    margin: 10px 40px;
+    font-size: 15px;
+    color: #22a94a;
+}
+
+/*подтверждение отправки данных*/
+#re-form {
+    display: none;
+    margin: 10px 40px;
+    border: 2px dotted lightgray;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: grey;
+}
+#re-form h2 {
+    font-size: 20px;
+}
+#re-form p,
+#re-form li {
+    margin: 10px 20px;
+    text-align: left;
+    font-size: 14px;
+}
+#re-form hr {
+    margin: 10px 20px;
+    border: 1px dashed lightgray;
+}
+#re-form .thanks {
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/*-----------------------------------КНОПКА ВВЕРХ-----------------------------------*/
+
+/*кнопка*/
+#up::before {
+    content: '';
+    display: block;
+    position: fixed;
+    right: 50%;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background: #A0CAAB;
+    border-radius: 50%;
+    transform:
+            translateX(527px)
+            translateY(-20px);
+    opacity: 0.5;
+}
+
+/*стрелка на кнопке*/
+#up::after {
+    content: '';
+    display: block;
+    position: fixed;
+    right: 50%;
+    bottom: 0;
+    width: 36px;
+    height: 36px;
+    background: url('img/arrow-top.svg') no-repeat;
+    transform:
+            translateX(520px)
+            translateY(-22px);
+    opacity: 0.3;
+}
+
+/*длительность изменения*/
+#up::before,
+#up::after {
+    transition-duration: 0.3s;
+}
+
+/*наведение на кнопку*/
+#up:hover::before {
+    background: #F6AC60;
+    opacity: 1;
+}
+
+/*наведение на кнопку - стрелка*/
+#up:hover::after {
+    opacity: 1;
+}
+
+
+/*-----------------------------------КНОПКА НАЗАД----------------------------------*/
+
+/*кнопка*/
+#back-field {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: #A0CAAB;
+    border-radius: 25px;
+    transform:
+            translateX(-534px)
+            translateY(22px);
+    opacity: 0.5;
+    transition-duration: 0.3s;
+}
+
+/*стрелка на кнопке*/
+#back {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: url('img/arrow-left.svg') no-repeat;
+    transform:
+            translateX(-523px)
+            translateY(29px);
+    opacity: 0.3;
+    transition-duration: 0.3s;
+}
+
+/*надпись на кнопке*/
+#text {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: transparent;
+    transform:
+            translateX(-520px)
+            translateY(37px);
+    transition-duration: 0.3s;
+}
+
+/*наведение на кнопку*/
+#pos:hover #back-field {
+    width: 140px;
+    background: #F6AC60;
+    transform:
+            translateX(-624px)
+            translateY(22px);
+    opacity: 1;
+}
+
+/*наведение на кнопку - стрелка*/
+#pos:hover #back {
+    transform:
+            translateX(-613px)
+            translateY(29px);
+    opacity: 1;
+}
+
+/*наведение на кнопку - текст*/
+#pos:hover #text {
+    width: 100%;
+    transform:
+            translateX(-570px)
+            translateY(37px);
+    color: white;
+}
