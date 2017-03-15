@@ -112,11 +112,13 @@ document.getElementById('button_3').onclick = taskThree;
 
 
 // Задание 4
-function taskFourFocus() {
+function taskFourFocus()
+{
     window.status = 'Определитесь с выбором';
     document.getElementById('status_bar').innerHTML = 'Определитесь с выбором';
 }
-function taskFourBlur() {
+function taskFourBlur()
+{
     window.status = '';
     document.getElementById('status_bar').innerHTML = '&#8199;';
 }
@@ -203,7 +205,8 @@ function addCalendar(id, year)
         document.getElementById(id).innerHTML += string + '</tr>';
     }
 }
-function loadCalendar(year) {
+function loadCalendar(year)
+{
     addCalendar('calendar_1', year);
     addCalendar('calendar_2', year);
 }
@@ -352,3 +355,9 @@ function error()
         document.getElementById('re-form').innerHTML += '<p class="thanks">Спасибо за заказ!</p>';
     }
 }
+function clear()
+{
+    document.getElementById('re-form').innerHTML = '';
+    document.getElementById('re-form').style.display = 'none';
+}
+document.getElementById('reset').onclick = clear;
