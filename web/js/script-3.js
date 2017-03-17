@@ -16,13 +16,13 @@ function taskOne()
     } else {
         //считаем первый элемент
         min = Math.floor(Math.random() * 20);
-        string = string + min + ' &#8196;&#8196; ';
+        string += min + '&#8196;&#8196;';
 
         //накопим остальные
         let temp;
         for (let i = 1; i < n; i++) {
             temp = Math.floor(Math.random() * 20);
-            string = string + temp + ' &#8196; ';
+            string += temp + '&#8196;&#8196;';
             if (temp < min) {
                 min = temp;
                 count = 1;
