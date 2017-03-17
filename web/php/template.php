@@ -78,13 +78,13 @@
                 Программа должна использовать только целые переменные.
             </p>
 
-            <form onsubmit="answerThree(); return false" class="post">
+            <form onsubmit="answerThree(); return false" class="post" autocomplete="off">
                 <h2>
                     Результат
                 </h2>
 
                 <div>
-                    <label for="input_3_1" class="text none">
+                    <label for="input_3_1" class="text none" >
                         Введите <i>n</i>:
                     </label>
                     <input type="number" min="2" id="input_3_1" class="last" required>
@@ -119,7 +119,7 @@
                 пользователю передать два числа, основание системы счисления и указать операцию, выполняемую над ними.
             </p>
 
-            <form onsubmit="answerFour(); return false" class="post">
+            <form onsubmit="answerFour(); return false" class="post"  autocomplete="off">
                 <h2>
                     Результат
                 </h2>
@@ -179,7 +179,7 @@
                 14. Файл содержит вещественные числа. Указать отрезок, которому принадлежат все элементы файла.
             </p>
 
-            <span><?php echo $task_5; ?></span>
+            <?php echo $task_5; ?>
         </div>
 
         <div class="block" id="block_6">

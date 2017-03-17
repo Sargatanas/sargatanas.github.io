@@ -17,17 +17,22 @@ function answerFour() {
     let num2 = document.getElementById('input_4_2').value;
     let base = document.getElementById('input_4_3').value;
     let operation = document.getElementById('input_4_4').value;
-    switch (operation) {
-        case '+': operation = 'sum'; break;
-        case '-': operation = 'sub'; break;
-        case '*': operation = 'mult'; break;
-        case '/': operation = 'div'; break;
-        case '^': operation = 'pow'; break;
+
+    if ((operation != '+') && (operation != '-') && (operation != '*') && (operation != '/') && (operation != '^')) {
+        document.getElementById('output_4').innerHTML = 'некорректная операция';
+    } else {
+        switch (operation) {
+            case '+': operation = 'sum'; break;
+            case '-': operation = 'sub'; break;
+            case '*': operation = 'mult'; break;
+            case '/': operation = 'div'; break;
+            case '^': operation = 'pow'; break;
+        }
+
+        let result = new XMLHttpRequest();
+        result.open('GET',"../php/functions/notation.php?num1=" + num1 + "&num2=" + num2 + "&base=" + base + "&operation=" + operation,false);
+        result.send(null);
+
+        document.getElementById('output_4').innerHTML = result.responseText;
     }
-
-    let result = new XMLHttpRequest();
-    result.open('GET',"../php/functions/notation.php?num1=" + num1 + "&num2=" + num2 + "&base=" + base + "&operation=" + operation,false);
-    result.send(null);
-
-    document.getElementById('output_4').innerHTML = result.responseText;
 }

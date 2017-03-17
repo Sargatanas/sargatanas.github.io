@@ -46,13 +46,25 @@ function translateTo($number, $base)
         $result .= $count;
     }
 
-    for (;;) {
-        if ((substr($result, strlen($result) - 1, 1) != '0') && (substr($result, strlen($result) - 1, 1) != '.')) {
-            break;
-        } else {
-            $result = substr($result,0,strlen($result)-1);
+    if (strpos($result, '.') !== false) {
+        for (;;) {
+            if (substr($result, strlen($result) - 1, 1) != '0') {
+                break;
+            } else {
+                $result = substr($result, 0, strlen($result) - 1);
+            }
         }
     }
+    if (strpos($result, '.') !== false) {
+        for (;;) {
+            if (substr($result, strlen($result) - 1, 1) != '.') {
+                break;
+            } else {
+                $result = substr($result, 0, strlen($result) - 1);
+            }
+        }
+    }
+
 
     if ($crit === 1) {
         $result = '-'.$result;

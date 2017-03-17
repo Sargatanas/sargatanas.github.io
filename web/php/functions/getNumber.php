@@ -28,7 +28,9 @@ function getNumber($numbers) {
     // Заменим знаки на пробел
     $numbers = str_replace(" ", " &nbsp; ", $numbers);
     $numbers = str_replace("\r\n", " &nbsp; ", $numbers);
-    $result .= "<div class='text none last'>Числа <br>{$numbers}<br> лежат в отрезке ";
+    $result .= "<div class='text none last'>Числа</div> 
+                <div class='text none last'><span>{$numbers}</span></div> 
+                <div class='text none last'>лежат на отрезке ";
     $numbers = str_replace(" &nbsp; ", " ", $numbers);
 
     // Считаем первое число
@@ -52,7 +54,7 @@ function getNumber($numbers) {
         }
     }
 
-    $result .= "[{$min}; {$max}]</div>";
+    $result .= "<span>&nbsp;[{$min}; &nbsp;{$max}]</span></div>";
     return $result;
 }
 
