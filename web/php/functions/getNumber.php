@@ -9,25 +9,15 @@ function getNumber($numbers) {
         $numbers = str_replace("  ", " ", $numbers);
         $pos = strpos($numbers, "  ");
     }
-    $pos = strpos($numbers, "\r\n\r\n");
+    $pos = strpos($numbers, "\n\n");
     for (;$pos !== false;) {
-    $numbers = str_replace("\r\n\r\n", "\r\n", $numbers);
-    $pos = strpos($numbers, "\r\n\r\n");
-    }
-
-    // Удалим дублирующиеся знаки
-    $pos = strpos($numbers, "  ");
-    for (;$pos !== false;) {
-        $numbers = str_replace("  ", " ", $numbers);
-    }
-    $pos = strpos($numbers, "\r\n\r\n");
-    for (;$pos !== false;) {
-        $numbers = str_replace("\r\n\r\n", "\r\n", $numbers);
+    $numbers = str_replace("\n\n", "\n", $numbers);
+    $pos = strpos($numbers, "\n\n");
     }
 
     // Заменим знаки на пробел
     $numbers = str_replace(" ", " &nbsp; ", $numbers);
-    $numbers = str_replace("\r\n", " &nbsp; ", $numbers);
+    $numbers = str_replace("\n", " &nbsp; ", $numbers);
     $result .= "<div class='text none last'>Числа</div> 
                 <div class='text none last'><span>{$numbers}</span></div> 
                 <div class='text none last'>лежат на отрезке ";
@@ -55,6 +45,6 @@ function getNumber($numbers) {
     }
 
     $result .= "<span>&nbsp;[{$min}; &nbsp;{$max}]</span></div>";
+
     return $result;
 }
-
