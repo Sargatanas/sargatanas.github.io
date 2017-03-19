@@ -20,7 +20,8 @@ function getNumber($numbers) {
     $pos = strpos($numbers, $find);
     }
 
-    // Заменим знаки на пробел
+    // Заменим знаки на пробел и запятые на точки
+    $numbers = str_replace(",", ".", $numbers);
     $numbers = str_replace(" ", " &nbsp; ", $numbers);
     $numbers = str_replace($char_br, " &nbsp; ", $numbers);
     $result .= "<div class='text none last'>Числа</div> 
