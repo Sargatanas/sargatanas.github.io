@@ -9,15 +9,20 @@ function getNumber($numbers) {
         $numbers = str_replace("  ", " ", $numbers);
         $pos = strpos($numbers, "  ");
     }
-    $pos = strpos($numbers, "\n\n");
+    $char_br = "\r\n";
+    if (strpos($numbers, $char_br) === false) {
+        $char_br = "\n";
+    }
+    $find = $char_br.$char_br;
+    $pos = strpos($numbers, $find);
     for (;$pos !== false;) {
-    $numbers = str_replace("\n\n", "\n", $numbers);
-    $pos = strpos($numbers, "\n\n");
+    $numbers = str_replace($find, $char_br, $numbers);
+    $pos = strpos($numbers, $find);
     }
 
     // Заменим знаки на пробел
     $numbers = str_replace(" ", " &nbsp; ", $numbers);
-    $numbers = str_replace("\n", " &nbsp; ", $numbers);
+    $numbers = str_replace($char_br, " &nbsp; ", $numbers);
     $result .= "<div class='text none last'>Числа</div> 
                 <div class='text none last'><span>{$numbers}</span></div> 
                 <div class='text none last'>лежат на отрезке ";
