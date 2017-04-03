@@ -185,12 +185,12 @@ function addCalendar(id, year)
     document.getElementById(id).innerHTML += string + '</tr>';
 
     // заполним прочие ячейки
-    for (; cur_days > 0;)
+    for (; cur_days > -1;)
     {
         string = '<tr>';
         for (i = 1; i <= 7; i++)
         {
-            if (cur_days >= 0)
+            if (cur_days > -1)
             {
                 if (new Date().getDate() == count_days - cur_days)
                     string += '<td class="cur_date">';
