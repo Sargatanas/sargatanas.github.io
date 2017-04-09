@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Лабораторная работа №4</title>
     <link href="../css/lab4.css" rel="stylesheet">
 
-    <script>
-        window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};
-    </script>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
+  extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </head>
 <body>
@@ -70,11 +75,34 @@
     </p>
 
     <p class="text cod">
-        <&#8203;script><br>
-            window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};<br>
-        <&#8203;/script><br>
-        <&#8203;script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML">
-        <br><&#8203;/script>
+        <&#8203;script type="text/x-mathjax-config">MathJax.Hub.Config({
+        <br>
+            config: ["MMLorHTML.js"],
+        <br>
+            jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
+        <br>
+            extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
+        <br>
+  TeX: {
+        <br>
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        <br>
+  }
+});<&#8203;/script>
+        <br>
+        <&#8203;script type="text/javascript" src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><&#8203;/script>
+    </p>
+
+    <p class="text">
+        Далее перед закрывающим тегом <&#8203;/body> добавить:
+    </p>
+
+    <p class="text cod">
+        <&#8203;script type="text/javascript">
+        <br>
+            MathJax.Hub.Configured()
+        <br>
+        <&#8203;/script>
     </p>
 
     <p class="text">
@@ -85,11 +113,11 @@
         &#8203;style="display: block"
     </p>
 
-    <p class="text">
-        P.S. Впрочем, старым версиям IE не помогает даже это...
-    </p>
-
 </div>
+
+<script type="text/javascript">
+  MathJax.Hub.Configured()
+</script>
 
 </body>
 

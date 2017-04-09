@@ -1,7 +1,3 @@
-/**
- * Created by user on 11.03.2017.
- */
-
 function randomInteger(min, max) {
     var rand = min + Math.random() * (max - min);
     rand = Math.round(rand);

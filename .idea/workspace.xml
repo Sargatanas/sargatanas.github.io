@@ -20,17 +20,36 @@
     <favorites_list name="Лабы" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="script-3.js" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="script-3.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/script-3.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="834">
+            <state relative-caret-position="3451">
               <caret line="203" column="9" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
               <folding>
                 <marker date="1491245963791" expanded="true" signature="4568:4719" ph="..." />
                 <marker date="1491245963791" expanded="true" signature="4769:5240" ph="..." />
                 <marker date="1491245963791" expanded="true" signature="5465:5472" ph="..." />
                 <marker date="1491245963791" expanded="true" signature="6212:6219" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lab4.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/html/lab4.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="723">
+              <caret line="119" column="9" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+              <folding>
+                <element signature="e#1952#1959#0" expanded="true" />
+                <element signature="e#2050#2057#0" expanded="true" />
+                <element signature="e#2490#2497#0" expanded="true" />
+                <element signature="e#2528#2535#0" expanded="true" />
+                <element signature="e#2655#2662#0" expanded="true" />
+                <element signature="e#2741#2748#0" expanded="true" />
+                <element signature="e#2809#2816#0" expanded="true" />
+                <element signature="e#2919#2926#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,7 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/game1/script.js" />
         <option value="$PROJECT_DIR$/game1/game.html" />
         <option value="$PROJECT_DIR$/game/game.html" />
         <option value="$PROJECT_DIR$/game/style.css" />
@@ -104,6 +122,7 @@
         <option value="$PROJECT_DIR$/web/php/template.php" />
         <option value="$PROJECT_DIR$/web/css/lab5.css" />
         <option value="$PROJECT_DIR$/web/js/script-3.js" />
+        <option value="$PROJECT_DIR$/web/html/lab4.html" />
       </list>
     </option>
   </component>
@@ -168,7 +187,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -315,6 +333,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,11 +497,12 @@
       <workItem from="1490976452345" duration="22000" />
       <workItem from="1491224416406" duration="60000" />
       <workItem from="1491245528205" duration="461000" />
+      <workItem from="1491758264188" duration="683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286823000" />
+    <option name="totallyTimeSpent" value="287506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -630,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/html/lab4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/html/1.html" />
     <entry file="file://$PROJECT_DIR$/web/html/lab3.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -723,13 +736,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/script-3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
+        <state relative-caret-position="3451">
           <caret line="203" column="9" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
           <folding>
             <marker date="1491245963791" expanded="true" signature="4568:4719" ph="..." />
             <marker date="1491245963791" expanded="true" signature="4769:5240" ph="..." />
             <marker date="1491245963791" expanded="true" signature="5465:5472" ph="..." />
             <marker date="1491245963791" expanded="true" signature="6212:6219" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/html/lab4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="119" column="9" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+          <folding>
+            <element signature="e#1952#1959#0" expanded="true" />
+            <element signature="e#2050#2057#0" expanded="true" />
+            <element signature="e#2490#2497#0" expanded="true" />
+            <element signature="e#2528#2535#0" expanded="true" />
+            <element signature="e#2655#2662#0" expanded="true" />
+            <element signature="e#2741#2748#0" expanded="true" />
+            <element signature="e#2809#2816#0" expanded="true" />
+            <element signature="e#2919#2926#0" expanded="true" />
           </folding>
         </state>
       </provider>
